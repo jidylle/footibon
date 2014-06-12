@@ -1,4 +1,6 @@
 Pronosport2::Application.routes.draw do
+
+
   resources :pronostics
 
 
@@ -7,6 +9,9 @@ Pronosport2::Application.routes.draw do
 
   resources :equipes
 
+  root :to => "home#index"
+
+  devise_for :users, :controllers => {:omniauth_callbacks => "omniauth_callbacks"}
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

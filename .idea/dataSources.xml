@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="1708706961">
+  <component name="DataSourceManagerImpl" format="xml" hash="697210598">
     <data-source source="LOCAL" name="Rails pronosport2: development" uuid="a5918bea-356d-4786-8352-9c91a9dbc775">
       <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/development.sqlite3</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails pronosport2: production" uuid="e24a5bd7-8911-456c-816d-3c8fa0a35874">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:dde3054bv6rm17</jdbc-url>
+      <user-name>iuzsdozrosjrct</user-name>
+      <user-password>dfe8dffddf9bdfe4df92dfe0dff3dffddffbdf9edfc1dfe3dfcbdfc6dfe3df98dfe3df9fdff8df9fdfd8dff9dfc4dfc8df9bdf92</user-password>
       <libraries />
     </data-source>
   </component>

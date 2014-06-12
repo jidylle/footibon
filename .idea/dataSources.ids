@@ -3,4 +3,7 @@
   <data-source source="LOCAL" name="Rails pronosport2: development" uuid="a5918bea-356d-4786-8352-9c91a9dbc775">
     <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
   </data-source>
+  <data-source source="LOCAL" name="Rails pronosport2: production" uuid="e24a5bd7-8911-456c-816d-3c8fa0a35874">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
 </component>
