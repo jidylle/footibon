@@ -1,0 +1,33 @@
+<%= form_for(@pronostic) do |f| %>
+  <% if @pronostic.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pronostic.errors.count, "error") %> prohibited this pronostic from being saved:</h2>
+
+      <ul>
+      <% @pronostic.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :match_id %><br />
+    <%= f.number_field :match_id %>
+  </div>
+  <div class="field">
+    <%= f.label :score1 %><br />
+    <%= f.number_field :score1 %>
+  </div>
+  <div class="field">
+    <%= f.label :score2 %><br />
+    <%= f.number_field :score2 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

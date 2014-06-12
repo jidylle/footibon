@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  date_match: 2014-06-11
+  score1: 1
+  score2: 1
+  equipe: 
+  equipe: 
+
+two:
+  date_match: 2014-06-11
+  score1: 1
+  score2: 1
+  equipe: 
+  equipe: 

@@ -1,0 +1,2 @@
+module PronosticsHelper
+end

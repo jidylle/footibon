@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @pronostic.user_id %>
+</p>
+
+<p>
+  <b>Match:</b>
+  <%= @pronostic.match_id %>
+</p>
+
+<p>
+  <b>Score1:</b>
+  <%= @pronostic.score1 %>
+</p>
+
+<p>
+  <b>Score2:</b>
+  <%= @pronostic.score2 %>
+</p>
+
+
+<%= link_to 'Edit', edit_pronostic_path(@pronostic) %> |
+<%= link_to 'Back', pronostics_path %>

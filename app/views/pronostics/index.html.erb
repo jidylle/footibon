@@ -1,0 +1,29 @@
+<h1>Listing pronostics</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Match</th>
+    <th>Score1</th>
+    <th>Score2</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @pronostics.each do |pronostic| %>
+  <tr>
+    <td><%= pronostic.user_id %></td>
+    <td><%= pronostic.match_id %></td>
+    <td><%= pronostic.score1 %></td>
+    <td><%= pronostic.score2 %></td>
+    <td><%= link_to 'Show', pronostic %></td>
+    <td><%= link_to 'Edit', edit_pronostic_path(pronostic) %></td>
+    <td><%= link_to 'Destroy', pronostic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Pronostic', new_pronostic_path %>
