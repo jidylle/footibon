@@ -75,7 +75,7 @@ class PronosticsController < ApplicationController
       c.fill("#ffffff")
     end
 
-    file_tmp_path="#{Rails.root}/tmp/pronostics/output.jpg"
+    file_tmp_path="#{Rails.root}/tmp/output.jpg"
     result.write file_tmp_path
 
 

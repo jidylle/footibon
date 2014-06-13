@@ -92,7 +92,7 @@
       <file leaf-file-name="pronostics_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/pronostics_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="84" column="49" selection-start="2317" selection-end="2317" vertical-scroll-proportion="0.31548756" vertical-offset="1095" max-vertical-offset="2115">
+            <state line="77" column="37" selection-start="2159" selection-end="2159" vertical-scroll-proportion="0.11472275" vertical-offset="1095" max-vertical-offset="2115">
               <folding />
             </state>
           </provider>
@@ -840,7 +840,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/pronostics_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="49" selection-start="2317" selection-end="2317" vertical-scroll-proportion="0.31548756" vertical-offset="1095" max-vertical-offset="2115">
+        <state line="77" column="37" selection-start="2159" selection-end="2159" vertical-scroll-proportion="0.11472275" vertical-offset="1095" max-vertical-offset="2115">
           <folding />
         </state>
       </provider>
