@@ -65,14 +65,14 @@ class PronosticsController < ApplicationController
     end
 
     result.combine_options do |c|
-      c.font "#{Rails.root}/signika-bold.ttf"
+      c.font "#{Rails.root}/public/signika-bold.ttf"
       c.pointsize '30'
+      c.fill("#ffffff")
       c.draw "text 290,310 '#{@pronostic.match.equipe1.nom}'"
       c.draw "text 590,310 '#{@pronostic.match.equipe2.nom}'"
       c.pointsize '120'
       c.draw "text 310,280 '#{@pronostic.score1}'"
       c.draw "text 610,280 '#{@pronostic.score2}'"
-      c.fill("#ffffff")
     end
 
     file_tmp_path="#{Rails.root}/tmp/output.jpg"
