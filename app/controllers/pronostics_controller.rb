@@ -16,6 +16,7 @@ class PronosticsController < ApplicationController
   def show
 
     @pronostic = Pronostic.find(params[:id])
+    @url_s3_pronostic="http://mqtechbucketus.s3.amazonaws.com/"+@pronostic.id.to_s+".jpg"
 
     respond_to do |format|
       format.html # show.html.erb
@@ -73,10 +74,15 @@ class PronosticsController < ApplicationController
       c.draw "text 610,280 '#{@pronostic.score2}'"
       c.fill("#ffffff")
     end
-    result.write "#{Rails.root}/tmp/output.jpg"
+
+    file_tmp_path="#{Rails.root}/tmp/pronostics/output.jpg"
+    result.write file_tmp_path
+
+
 
     respond_to do |format|
       if @pronostic.save
+        store_in_s3(file_tmp_path, @pronostic.id)
         format.html { redirect_to @pronostic, notice: 'Pronostic was successfully created.' }
         format.json { render json: @pronostic, status: :created, location: @pronostic }
       else
@@ -112,5 +118,18 @@ class PronosticsController < ApplicationController
       format.html { redirect_to pronostics_url }
       format.json { head :no_content }
     end
+  end
+
+  def store_in_s3 (file_path, pronostic_id)
+    service = S3::Service.new(:access_key_id => "AKIAJPVLATTZ3TYES3YQ",
+                              :secret_access_key => "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")
+
+    mqtech_bucket = service.buckets.find("mqtechbucketus")
+    name=pronostic_id.to_s + ".jpg"
+
+    new_object = mqtech_bucket.objects.build(name)
+    test=File.read(file_path, :encoding => "BINARY")
+    new_object.content = test
+    new_object.save
   end
 end

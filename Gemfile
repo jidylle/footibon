@@ -50,3 +50,5 @@ gem 'omniauth-facebook'
 gem "mini_magick"
 
 gem "twitter-bootstrap-rails"
+
+gem 's3'
