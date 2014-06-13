@@ -44,10 +44,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="application.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/application.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="28" selection-start="2600" selection-end="2600" vertical-scroll-proportion="0.0" vertical-offset="450" max-vertical-offset="1050">
+            <state line="53" column="28" selection-start="2600" selection-end="2600" vertical-scroll-proportion="0.66091955" vertical-offset="450" max-vertical-offset="1050">
               <folding />
             </state>
           </provider>
@@ -72,15 +72,6 @@
         </entry>
       </file>
       <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/equipes/index.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="16" selection-start="608" selection-end="608" vertical-scroll-proportion="-7.375" vertical-offset="78" max-vertical-offset="630">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/matches/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="23" column="26" selection-start="934" selection-end="934" vertical-scroll-proportion="-11.666667" vertical-offset="65" max-vertical-offset="720">
@@ -98,10 +89,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pronostics_controller.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="pronostics_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/pronostics_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="36" selection-start="2067" selection-end="2067" vertical-scroll-proportion="0.39078155" vertical-offset="930" max-vertical-offset="1830">
+            <state line="77" column="29" selection-start="2106" selection-end="2106" vertical-scroll-proportion="0.0" vertical-offset="930" max-vertical-offset="1830">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="production.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="30" selection-start="644" selection-end="644" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1095">
               <folding />
             </state>
           </provider>
@@ -155,6 +155,7 @@
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/config/application.rb" />
         <option value="$PROJECT_DIR$/app/controllers/pronostics_controller.rb" />
+        <option value="$PROJECT_DIR$/config/environments/production.rb" />
       </list>
     </option>
   </component>
@@ -1090,20 +1091,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="14" selection-start="3177" selection-end="3177" vertical-scroll-proportion="-12.5" vertical-offset="795" max-vertical-offset="1425">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/application.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="28" selection-start="2600" selection-end="2600" vertical-scroll-proportion="0.0" vertical-offset="450" max-vertical-offset="1050">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="24" selection-start="116" selection-end="116" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1200">
@@ -1120,7 +1107,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/pronostics_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="36" selection-start="2067" selection-end="2067" vertical-scroll-proportion="0.39078155" vertical-offset="930" max-vertical-offset="1830">
+        <state line="77" column="29" selection-start="2106" selection-end="2106" vertical-scroll-proportion="0.0" vertical-offset="930" max-vertical-offset="1830">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="30" selection-start="644" selection-end="644" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1095">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="14" selection-start="3177" selection-end="3177" vertical-scroll-proportion="-12.5" vertical-offset="795" max-vertical-offset="1425">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/application.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="28" selection-start="2600" selection-end="2600" vertical-scroll-proportion="0.66091955" vertical-offset="450" max-vertical-offset="1050">
           <folding />
         </state>
       </provider>
