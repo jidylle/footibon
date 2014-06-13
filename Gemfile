@@ -52,3 +52,5 @@ gem "mini_magick"
 gem "twitter-bootstrap-rails"
 
 gem 's3'
+
+gem 'social-share-button'
