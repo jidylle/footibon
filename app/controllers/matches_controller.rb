@@ -13,13 +13,9 @@ class MatchesController < ApplicationController
   # GET /matches/1
   # GET /matches/1.json
   def show
-    
-    if (params[:id] == 'random')
-      @match = Match.find(params[:id])
-    else
-      @match = Match.all[random(Match.length)]
-    end
-
+    @match = Match.find(params[:id])
+    @match["equipe1_nom"]=@match.equipe1.nom
+    @match["equipe2_nom"]=@match.equipe2.nom
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @match }
@@ -88,11 +84,10 @@ class MatchesController < ApplicationController
   
   def random
     @matches = Match.all
-    @match = @matches[random(@matches.lenght)]
+    @match = @matches[rand(@matches.size)]
     
     respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @match }
+      format.html { redirect_to match_path(@match,format: :json) }
     end
   end
 end

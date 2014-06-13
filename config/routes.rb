@@ -1,5 +1,6 @@
 Pronosport2::Application.routes.draw do
 
+  get 'matches/random', to: 'matches#random'
 
   resources :pronostics
 
