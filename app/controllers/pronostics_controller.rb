@@ -17,6 +17,7 @@ class PronosticsController < ApplicationController
 
     @pronostic = Pronostic.find(params[:id])
     @url_s3_pronostic="http://mqtechbucketus.s3.amazonaws.com/"+@pronostic.id.to_s+".jpg"
+    @match_phrase=@pronostic.match.phrase
 
     respond_to do |format|
       format.html # show.html.erb

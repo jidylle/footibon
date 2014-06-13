@@ -1,7 +1,7 @@
 <% content_for :for_head do %>
     <meta content=<%= pronostic_url(@pronostic) %> property="og:url">
     <meta content=<%= @url_s3_pronostic %> property="og:image"> <!-- image en 200x200px -->
-    <meta content="Voici mon pronostic pour le match" property="og:title">
+    <meta content="Voici mon pronostic pour le match <%= @match_phrase %>" property="og:title">
     <meta content="Je pense que le match se terminera avec ce score" property="og:description">
 
 <% end %>
@@ -17,7 +17,7 @@
 
 <div class="form-actions">
   <a href="javascript:fbShare('<%= pronostic_url(@pronostic) %>',
-   'Voici mon pronostic pour le match',
+   'Voici mon pronostic pour le match <%= @match_phrase %>',
    'Je pense que le match se terminera avec ce score',
    '<%= @url_s3_pronostic %>',
     520, 350)" class="btn btn-warning">PARTAGER VOTRE PRONOSTIC</a>

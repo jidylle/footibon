@@ -4,4 +4,8 @@ class Match < ActiveRecord::Base
   attr_accessible :date_match, :score1, :score2,:equipe1_id,:equipe2_id
 
   has_many :pronostics
+
+  def phrase
+    equipe1.nom + "-" +equipe2.nom
+  end
 end
