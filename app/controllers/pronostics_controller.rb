@@ -73,7 +73,7 @@ class PronosticsController < ApplicationController
       c.draw "text 610,280 '#{@pronostic.score2}'"
       c.fill("#ffffff")
     end
-    result.write "output.jpg"
+    result.write "#{Rails.root}/tmp/output.jpg"
 
     respond_to do |format|
       if @pronostic.save
