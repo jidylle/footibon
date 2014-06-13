@@ -46,3 +46,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
+
+gem "mini_magick"
+
+gem "twitter-bootstrap-rails"

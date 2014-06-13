@@ -1,4 +1,5 @@
 class PronosticsController < ApplicationController
+
   # GET /pronostics
   # GET /pronostics.json
   def index
@@ -13,6 +14,7 @@ class PronosticsController < ApplicationController
   # GET /pronostics/1
   # GET /pronostics/1.json
   def show
+
     @pronostic = Pronostic.find(params[:id])
 
     respond_to do |format|
@@ -24,7 +26,9 @@ class PronosticsController < ApplicationController
   # GET /pronostics/new
   # GET /pronostics/new.json
   def new
+    @match =Match.find(params["match_id"])
     @pronostic = Pronostic.new
+    @pronostic.match=@match
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,6 +45,35 @@ class PronosticsController < ApplicationController
   # POST /pronostics.json
   def create
     @pronostic = Pronostic.new(params[:pronostic])
+
+    first_image = MiniMagick::Image.open "#{Rails.root}/app/assets/images/scoreboard.jpg"
+
+
+
+    equipe1 = MiniMagick::Image.open @pronostic.match.equipe1.drapeau
+    equipe1.resize "114x80!"
+    equipe2 = MiniMagick::Image.open @pronostic.match.equipe2.drapeau
+    equipe2.resize "114x80!"
+    result = first_image.composite(equipe1) do |c|
+      c.compose "Over" # OverCompositeOp
+      c.geometry "+285+325" # copy second_image onto first_image from (20, 20)
+    end
+    result = result.composite(equipe2) do |c|
+      c.compose "Over" # OverCompositeOp
+      c.geometry "+585+325" # copy second_image onto first_image from (20, 20)
+    end
+
+    result.combine_options do |c|
+      c.font "#{Rails.root}/app/assets/fonts/signika-bold.ttf"
+      c.pointsize '30'
+      c.draw "text 290,310 '#{@pronostic.match.equipe1.nom}'"
+      c.draw "text 590,310 '#{@pronostic.match.equipe2.nom}'"
+      c.pointsize '120'
+      c.draw "text 310,280 '#{@pronostic.score1}'"
+      c.draw "text 610,280 '#{@pronostic.score2}'"
+      c.fill("#ffffff")
+    end
+    result.write "output.jpg"
 
     respond_to do |format|
       if @pronostic.save

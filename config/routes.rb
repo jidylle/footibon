@@ -4,12 +4,14 @@ Pronosport2::Application.routes.draw do
   resources :pronostics
 
 
-  resources :matches
+  resources :matches do
+    resource :pronostics
+  end
 
 
   resources :equipes
 
-  root :to => "home#index"
+  root :to => "matches#index"
 
   devise_for :users, :controllers => {:omniauth_callbacks => "omniauth_callbacks"}
 

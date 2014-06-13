@@ -1,31 +1,42 @@
-<h1>Listing matches</h1>
-
-<table>
-  <tr>
-    <th>Date match</th>
-    <th>Score1</th>
-    <th>Score2</th>
-    <th>Equipe</th>
-    <th>Equipe</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @matches.each do |match| %>
-  <tr>
-    <td><%= match.date_match %></td>
-    <td><%= match.score1 %></td>
-    <td><%= match.score2 %></td>
-    <td><%= match.equipe1_id %></td>
-    <td><%= match.equipe2_id %></td>
-    <td><%= link_to 'Show', match %></td>
-    <td><%= link_to 'Edit', edit_match_path(match) %></td>
-    <td><%= link_to 'Destroy', match, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+<%- model_class = Match -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:date_match) %></th>
+      <th><%= model_class.human_attribute_name(:equipe1_id) %></th>
+      <th><%= model_class.human_attribute_name(:equipe2_id) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @matches.each do |match| %>
+      <tr>
+        <td><%= link_to match.id, match_path(match) %></td>
+        <td><%= match.date_match %></td>
+        <td><%= image_tag match.equipe1.drapeau, :class => "drapeau" %></td>
+        <td><%= image_tag match.equipe2.drapeau, :class => "drapeau" %></td>
+        <td>
+          <%= link_to "PRONOSTIC",
+                      new_match_pronostics_path(match), :class => 'btn btn-big btn-warning' %>
+          <% if false%>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_match_path(match), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      match_path(match),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Match', new_match_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_match_path,
+            :class => 'btn btn-primary' %>

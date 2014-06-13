@@ -1,29 +1,40 @@
-<h1>Listing pronostics</h1>
-
-<table>
-  <tr>
-    <th>User</th>
-    <th>Match</th>
-    <th>Score1</th>
-    <th>Score2</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @pronostics.each do |pronostic| %>
-  <tr>
-    <td><%= pronostic.user_id %></td>
-    <td><%= pronostic.match_id %></td>
-    <td><%= pronostic.score1 %></td>
-    <td><%= pronostic.score2 %></td>
-    <td><%= link_to 'Show', pronostic %></td>
-    <td><%= link_to 'Edit', edit_pronostic_path(pronostic) %></td>
-    <td><%= link_to 'Destroy', pronostic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+<%- model_class = Pronostic -%>
+<div class="page-header">
+  <h1>Pronostics réalisés</h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th>Equipe 1</th>
+      <th>Equipe 2</th>
+      <th><%= model_class.human_attribute_name(:score1) %></th>
+      <th><%= model_class.human_attribute_name(:score2) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @pronostics.each do |pronostic| %>
+      <tr>
+        <td><%= link_to pronostic.id, pronostic_path(pronostic) %></td>
+        <td><%= image_tag pronostic.match.equipe1.drapeau, :class => "drapeau" %></td>
+        <td><%= image_tag pronostic.match.equipe2.drapeau, :class => "drapeau" %></td>
+        <td><%= pronostic.score1 %></td>
+        <td><%= pronostic.score2 %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_pronostic_path(pronostic), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      pronostic_path(pronostic),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Pronostic', new_pronostic_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_pronostic_path,
+            :class => 'btn btn-primary' %>

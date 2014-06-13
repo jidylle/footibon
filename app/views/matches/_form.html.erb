@@ -1,37 +1,38 @@
-<%= form_for(@match) do |f| %>
-  <% if @match.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@match.errors.count, "error") %> prohibited this match from being saved:</h2>
-
-      <ul>
-      <% @match.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @match, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :date_match, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.date_select :date_match, :class => 'date_select' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :score1, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :score1, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :score2, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :score2, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :equipe1_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :equipe1_id, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :equipe2_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :equipe2_id, :class => 'number_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :date_match %><br />
-    <%= f.date_select :date_match %>
-  </div>
-  <div class="field">
-    <%= f.label :score1 %><br />
-    <%= f.number_field :score1 %>
-  </div>
-  <div class="field">
-    <%= f.label :score2 %><br />
-    <%= f.number_field :score2 %>
-  </div>
-  <div class="field">
-    <%= f.label :equipe1 %><br />
-    <%= f.text_field :equipe1 %>
-  </div>
-  <div class="field">
-    <%= f.label :equipe2 %><br />
-    <%= f.text_field :equipe2 %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                matches_path, :class => 'btn' %>
   </div>
 <% end %>

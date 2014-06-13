@@ -11,3 +11,31 @@
  *= require_self
  *= require_tree .
  */
+
+.drapeau{
+    width: 114px;
+    height: 80px;
+}
+
+.right-align {
+    text-align: right;
+}
+
+.left-align {
+    text-align: left;
+}
+
+.center-align {
+    display:inline-block !important;
+    text-align: center;
+    vertical-align: middle !important;
+    float:none;
+}
+
+.big-input {
+    width:114px;
+    height: 80px;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
