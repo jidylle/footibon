@@ -5,7 +5,6 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:date_match) %></th>
       <th><%= model_class.human_attribute_name(:equipe1_id) %></th>
       <th><%= model_class.human_attribute_name(:equipe2_id) %></th>
@@ -15,14 +14,21 @@
   <tbody>
     <% @matches.each do |match| %>
       <tr>
-        <td><%= link_to match.id, match_path(match) %></td>
         <td><%= match.date_match %></td>
-        <td><%= image_tag match.equipe1.drapeau, :class => "drapeau" %></td>
-        <td><%= image_tag match.equipe2.drapeau, :class => "drapeau" %></td>
+        <td><%= image_tag match.equipe1.drapeau, :class => "drapeau" %></br><h2><%= match.equipe1.nom %></h2></td>
+        <td><%= image_tag match.equipe2.drapeau, :class => "drapeau" %></br><h2><%= match.equipe2.nom %></h2></td>
         <td>
-          <%= link_to "PRONOSTIC",
-                      new_match_pronostics_path(match), :class => 'btn btn-big btn-warning' %>
-          <% if false%>
+          <% if match.is_start?%>
+              Trop tard pour un pronostic! Match en cours...</br>
+          <% elsif match.is_finished%>
+             Match terminé sur le score de <%= match.score_final %> </br>
+          <% else %>
+              <%= link_to "FAIRE MON PRONOSTIC",
+                          new_match_pronostics_path(match), :class => 'btn btn-warning btn-mediumlarge' %> </br>
+          <% end %>
+          <%= link_to "Voir les pronostics",
+                      match_path(match), :class => 'btn btn-info' %>
+          <% if current_user && current_user.is_admin%>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_match_path(match), :class => 'btn btn-mini' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
@@ -36,7 +42,8 @@
     <% end %>
   </tbody>
 </table>
-
+<% if current_user && current_user.is_admin%>
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_match_path,
             :class => 'btn btn-primary' %>
+<%end%>

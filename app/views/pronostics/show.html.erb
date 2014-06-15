@@ -8,19 +8,23 @@
 
 <%- model_class = Pronostic -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+  <h1 align="center"><%=t '.title', :default => model_class.model_name.human %></h1>
 </div>
 
 <div class="row-fluid">
-  <div class="span9"><%= image_tag @url_s3_pronostic %></div>
+  <div class="span9 center"><%= image_tag @url_s3_pronostic %></div>
 </div>
 
 <div class="form-actions">
+  <div class="row-fluid">
+    <div class="span12 center">
   <a href="javascript:fbShare('<%= pronostic_url(@pronostic) %>',
    'Voici mon pronostic pour le match <%= @match_phrase %>',
    'Je pense que le match se terminera avec ce score',
    '<%= @url_s3_pronostic %>',
-    520, 350)" class="btn btn-warning">PARTAGER VOTRE PRONOSTIC</a>
+    520, 350)" class="btn btn-warning btn-xlarge">PARTAGER VOTRE PRONOSTIC</a>
+    </div>
+  </div>
 
 </div>
 

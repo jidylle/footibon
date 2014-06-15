@@ -7,6 +7,7 @@ gem 'rails', '3.2.17'
 
 group :development do
   gem 'sqlite3'
+  gem 'meta_request'
 end
 
 group :production do
@@ -46,6 +47,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'fb_graph'
 
 gem "mini_magick"
 
@@ -54,3 +56,5 @@ gem "twitter-bootstrap-rails"
 gem 's3'
 
 gem 'social-share-button'
+
+gem 'open_uri_redirections'

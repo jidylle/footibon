@@ -16,6 +16,9 @@ class MatchesController < ApplicationController
     @match = Match.find(params[:id])
     @match["equipe1_nom"]=@match.equipe1.nom
     @match["equipe2_nom"]=@match.equipe2.nom
+
+    @pronostics = @match.pronostics
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @match }

@@ -26,17 +26,19 @@
     text-align: left;
 }
 
-.center-align {
-    display:inline-block !important;
+.brand
+{
+    position: absolute;
+    width: 100%;
+    left: 0;
     text-align: center;
-    vertical-align: middle !important;
-    float:none;
+    margin: auto;
 }
 
-.big-input {
-    width:114px;
-    height: 80px;
-    font-size: 30px;
-    font-weight: bold;
-    text-align: center;
+.container-fluid {
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 5px;
 }
+
+

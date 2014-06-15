@@ -16,7 +16,7 @@
       <tr>
         <td><%= link_to equipe.id, equipe_path(equipe) %></td>
         <td><h2><%= equipe.nom.upcase %></h2></td>
-        <td><%= image_tag(equipe.drapeau, :class=>"image_container") %></td>
+        <td><%= image_tag(equipe.drapeau, :class=>"drapeau") %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_equipe_path(equipe), :class => 'btn btn-mini' %>
@@ -30,7 +30,8 @@
     <% end %>
   </tbody>
 </table>
-
+<% if current_user && current_user.is_admin%>
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_equipe_path,
             :class => 'btn btn-primary' %>
+<%end%>

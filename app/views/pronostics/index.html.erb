@@ -2,10 +2,20 @@
 <div class="page-header">
   <h1>Pronostics réalisés</h1>
 </div>
-<table class="table table-striped">
+<div class="row-fluid">
+  <div class="span 12">
+    <span class="label"><%= link_to "Mes pronostics", params.merge(sort: "my") %></span>
+    <span class="label label-info">Tous les pronostics</span>
+    <span class="label label-success">Bons pronostics</span>
+    <span class="label label-important">Mauvais pronostics </span>
+    <span class="label label-warning">Pronostics en cours </span>
+
+  </div>
+</div>
+<table class="table table-striped table-hover">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th>Joueur</th>
       <th>Equipe 1</th>
       <th>Equipe 2</th>
       <th><%= model_class.human_attribute_name(:score1) %></th>
@@ -15,13 +25,14 @@
   </thead>
   <tbody>
     <% @pronostics.each do |pronostic| %>
-      <tr>
-        <td><%= link_to pronostic.id, pronostic_path(pronostic) %></td>
-        <td><%= image_tag pronostic.match.equipe1.drapeau, :class => "drapeau" %></td>
-        <td><%= image_tag pronostic.match.equipe2.drapeau, :class => "drapeau" %></td>
-        <td><%= pronostic.score1 %></td>
-        <td><%= pronostic.score2 %></td>
+      <tr <%if pronostic.win?%> class="success"<%end%><%if pronostic.loose?%> class="error"<%end%>>
+        <td><% if pronostic.user %><%= image_tag pronostic.user.avatar %></br><%= pronostic.user.name %><% else%>Inconnu<%end%></td>
+        <td><%= image_tag pronostic.match.equipe1.drapeau, :class => "drapeau" %></br><%= pronostic.match.equipe1.nom %></td>
+        <td><%= image_tag pronostic.match.equipe2.drapeau, :class => "drapeau" %></br><%= pronostic.match.equipe2.nom %></td>
+        <td><h2><%= pronostic.score1 %></h2></td>
+        <td><h2><%= pronostic.score2 %></h2></td>
         <td>
+          <% if current_user && current_user.is_admin%>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_pronostic_path(pronostic), :class => 'btn btn-mini' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
@@ -29,12 +40,10 @@
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-mini btn-danger' %>
+          <% end %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_pronostic_path,
-            :class => 'btn btn-primary' %>

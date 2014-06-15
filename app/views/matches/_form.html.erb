@@ -6,29 +6,25 @@
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :score1, :class => 'control-label' %>
+    Equipe 1: <%= image_tag @match.equipe1.drapeau, :class => "drapeau"  %><%=@match.equipe1.nom %>
     <div class="controls">
-      <%= f.number_field :score1, :class => 'number_field' %>
+      <%= f.hidden_field :equipe1_id, :class => 'number_field' %>
+      <%= f.number_field :score1, :class => 'number_field', :placeholder => "Score1" %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :score2, :class => 'control-label' %>
+    Equipe 2: <%= image_tag @match.equipe2.drapeau, :class => "drapeau"  %><%=@match.equipe2.nom %>
     <div class="controls">
-      <%= f.number_field :score2, :class => 'number_field' %>
+      <%= f.hidden_field :equipe2_id, :class => 'number_field' %>
+      <%= f.number_field :score2, :class => 'number_field', :placeholder => "Score2" %>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :equipe1_id, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.number_field :equipe1_id, :class => 'number_field' %>
+    <div class="control-group">
+      A commençé ?
+      <div class="controls">
+        <%= f.check_box :is_start%>
+      </div>
     </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :equipe2_id, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.number_field :equipe2_id, :class => 'number_field' %>
-    </div>
-  </div>
 
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>

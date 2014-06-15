@@ -252,5 +252,6 @@ Devise.setup do |config|
 
   require "omniauth-facebook"
 
-  config.omniauth :facebook, "792664754100944", "1f8ad7fb2ae61364a3cba1d6430490c0"
+  config.omniauth :facebook, "664610046941921", "c87021128557f5b4e28c1101f54eb452",:scope => "publish_actions, email"
+
 end

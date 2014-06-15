@@ -60,5 +60,7 @@ module Pronosport2
     config.assets.version = '1.0'
 
     config.assets.initialize_on_precompile = false
+
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
   end
 end

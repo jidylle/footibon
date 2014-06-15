@@ -2,10 +2,9 @@ Pronosport2::Application.routes.draw do
 
   get 'matches/random', to: 'matches#random'
 
-  match 'pronostic/:id/share', to: 'pronostics#share_with_facebook', as: 'share_with_facebook'
-
   resources :pronostics
 
+  get 'pronostics/sign', to: 'pronostics#create', as: 'create_after_signin_pronostic'
 
   resources :matches do
     resource :pronostics

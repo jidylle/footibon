@@ -1,24 +1,32 @@
 <%= form_for @pronostic, :html => { :class => 'form-horizontal' } do |f| %>
+    <% if @pronostic.errors.count>0 %>
+    <div class="row-fluid" id="error_explanation">
+      <h2><%= pluralize(@pronostic.errors.count, "error") %> :</h2>
+      <ul>
+        <% @pronostic.errors.full_messages.each do |msg| %>
+            <li> * <%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
     <div class="row-fluid" xmlns="http://www.w3.org/1999/html">
       <div class="span5 right-align">
         <h2><%= @pronostic.match.equipe1.nom%></h2>
         <%= image_tag @pronostic.match.equipe1.drapeau, :class => "drapeau" %>
         </br></br>
-        <%= f.number_field :score1, :class => 'number_field big-input', :placeholder => "SCORE" %>
+        <%= f.number_field :score1, :class => 'number_field edit-btn-large', :placeholder => "SCORE" %>
       </div>
       <div class="span1 center-align"><span class="center-align"> <%= image_tag "versus.png"%></span></div>
       <div class="span5 left-align">
         <h2><%= @pronostic.match.equipe2.nom%></h2>
         <%= image_tag @pronostic.match.equipe2.drapeau, :class => "drapeau" %>
         </br></br>
-        <%= f.number_field :score2, :class => 'number_field big-input', :placeholder => "SCORE" %>
+        <%= f.number_field :score2, :class => 'number_field edit-btn-large', :placeholder => "SCORE" %>
       </div>
     </div>
     <%= f.hidden_field :match_id, :class => 'number_field' %>
 
   <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                pronostics_path, :class => 'btn' %>
+    <p class="text-left"><%= f.submit "VALIDER", :class => 'btn btn-warning btn-xlarge' %></p>
   </div>
 <% end %>

@@ -1,9 +1,16 @@
 class PronosticsController < ApplicationController
+  before_filter :store_location, :only => [:create]
+  before_filter :authenticate_user!,
+                :only => [:create,:edit]
 
   # GET /pronostics
   # GET /pronostics.json
   def index
-    @pronostics = Pronostic.all
+    if(current_user && params[:sort]=="my")
+      @pronostics=Pronostic.find_all_by_user_id(current_user.id)
+    else
+      @pronostics = Pronostic.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,14 +22,21 @@ class PronosticsController < ApplicationController
   # GET /pronostics/1.json
   def show
 
+    session.delete :pronostic_before_signin
     @pronostic = Pronostic.find(params[:id])
-    @url_s3_pronostic="http://mqtechbucketus.s3.amazonaws.com/"+@pronostic.id.to_s+".jpg"
+    @url_s3_pronostic=getAmazonLink+@pronostic.id.to_s+".jpg"
     @match_phrase=@pronostic.match.phrase
+
+    #share_on_facebook @pronostic
 
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @pronostic }
     end
+  end
+
+  def getAmazonLink
+    "http://mqtechbucketus.s3.amazonaws.com/"
   end
 
   # GET /pronostics/new
@@ -46,44 +60,54 @@ class PronosticsController < ApplicationController
   # POST /pronostics
   # POST /pronostics.json
   def create
-    @pronostic = Pronostic.new(params[:pronostic])
+    if session[:pronostic_before_signin]
+      @pronostic = Pronostic.new(params[:pronostic])
+    else
+      @pronostic = session[:pronostic_before_signin]
+    end
+
+    @pronostic.user = current_user
 
     first_image = MiniMagick::Image.open "#{Rails.root}/app/assets/images/scoreboard.jpg"
 
 
-
+    avatar_joueur=MiniMagick::Image.open process_uri(@pronostic.user.avatar)
+    avatar_joueur.resize "60x60!"
     equipe1 = MiniMagick::Image.open @pronostic.match.equipe1.drapeau
-    equipe1.resize "114x80!"
+    equipe1.resize "70x46!"
     equipe2 = MiniMagick::Image.open @pronostic.match.equipe2.drapeau
-    equipe2.resize "114x80!"
+    equipe2.resize "70x46!"
     result = first_image.composite(equipe1) do |c|
       c.compose "Over" # OverCompositeOp
-      c.geometry "+285+325" # copy second_image onto first_image from (20, 20)
+      c.geometry "+375+240" # copy second_image onto first_image from (20, 20)
     end
     result = result.composite(equipe2) do |c|
       c.compose "Over" # OverCompositeOp
-      c.geometry "+585+325" # copy second_image onto first_image from (20, 20)
+      c.geometry "+730+240" # copy second_image onto first_image from (20, 20)
+    end
+    result = result.composite(avatar_joueur) do |c|
+      c.compose "Over" # OverCompositeOp
+      c.geometry "+560+125" # copy second_image onto first_image from (20, 20)
     end
 
     result.combine_options do |c|
       c.font "#{Rails.root}/public/signika-bold.ttf"
-      c.pointsize '30'
+      c.pointsize '25'
       c.fill("#ffffff")
-      c.draw "text 290,310 '#{@pronostic.match.equipe1.nom}'"
-      c.draw "text 590,310 '#{@pronostic.match.equipe2.nom}'"
-      c.pointsize '120'
-      c.draw "text 310,280 '#{@pronostic.score1}'"
-      c.draw "text 610,280 '#{@pronostic.score2}'"
+      c.draw "text 380,145 '#{@pronostic.match.equipe1.nom}'"
+      c.draw "text 735,145 '#{@pronostic.match.equipe2.nom}'"
+      c.pointsize '100'
+      c.draw "text 380,220 '#{@pronostic.score1}'"
+      c.draw "text 740,220 '#{@pronostic.score2}'"
     end
 
     file_tmp_path="#{Rails.root}/tmp/output.jpg"
     result.write file_tmp_path
 
-
-
     respond_to do |format|
       if @pronostic.save
         store_in_s3(file_tmp_path, @pronostic.id)
+        share_on_facebook @pronostic
         format.html { redirect_to @pronostic, notice: 'Pronostic was successfully created.' }
         format.json { render json: @pronostic, status: :created, location: @pronostic }
       else
@@ -134,38 +158,27 @@ class PronosticsController < ApplicationController
     new_object.save
   end
 
-  def share_with_facebook(opts)
+  private
 
-    # Generates an url that will 'share with Facebook', and can includes title, url, summary, images without need of OG data.
-    #
-    # URL generate will be like
-    # http://www.facebook.com/sharer.php?s=100&p[title]=We also do cookies&p[url]=http://www.wealsodocookies.com&p[images][0]=http://www.wealsodocookies.com/images/logo.jpg&p[summary]=Super developer company
-    #
-    # For this you'll need to pass the options as
-    #
-    # { :url     => "http://www.wealsodocookies.com",
-    #   :title   => "We also do cookies",
-    #   :images  => {0 => "http://imagelink"} # You can have multiple images here
-    #   :summary => "My summary here"
-    # }
+  def store_location
+    session[:pronostic_before_signin] = Pronostic.new(params["pronostic"])
+    session[:user_return_to] = create_after_signin_pronostic_path
+  end
 
-    url = "http://www.facebook.com/sharer.php?s=100"
-
-    parameters = []
-
-    opts.each do |k,v|
-      key = "p[#{k}]"
-
-      if v.is_a? Hash
-        v.each do |sk, sv|
-          parameters << "#{key}[#{sk}]=#{sv}"
-        end
-      else
-        parameters << "#{key}=#{v}"
-      end
-
+  def process_uri(uri)
+    open(uri, :allow_redirections => :safe) do |r|
+      r.base_uri.to_s
     end
+  end
 
-    url + parameters.join("&")
+  def share_on_facebook pronostic
+    user = FbGraph::User.me(current_user.fbtoken).fetch
+    user.feed!(
+        :message => 'Voici mon pronostic pour le match '+ pronostic.match.phrase + ". Ka ou ka di?",
+        :picture => getAmazonLink + pronostic.id.to_s + ".jpg",
+        :link => pronostic_url(pronostic),
+        :name => user.name + ' pense que le match '+ pronostic.match.phrase + ' se terminera sur le score de '+pronostic.score1.to_s+'-'+pronostic.score2.to_s,
+        :description => 'Toi aussi, donne ton pronostic sur FOOTIBON et tente de gagner de magnifiques cadeaux !'
+    )
   end
 end

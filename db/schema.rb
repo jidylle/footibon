@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140612031649) do
+ActiveRecord::Schema.define(:version => 20140614233220) do
 
   create_table "equipes", :force => true do |t|
     t.string   "nom"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(:version => 20140612031649) do
     t.integer  "equipe2_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.boolean  "is_start"
   end
 
   create_table "pronostics", :force => true do |t|
@@ -54,6 +55,10 @@ ActiveRecord::Schema.define(:version => 20140612031649) do
     t.datetime "updated_at",                             :null => false
     t.string   "provider"
     t.string   "uid"
+    t.string   "name"
+    t.string   "avatar"
+    t.string   "fbtoken"
+    t.boolean  "is_admin"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

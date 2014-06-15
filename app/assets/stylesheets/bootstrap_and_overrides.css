@@ -5,3 +5,68 @@
   To use Glyphicons sprites instead of Font Awesome, replace with "require twitter-bootstrap-static/sprites"
   =require twitter-bootstrap-static/fontawesome
   */
+
+.row-fluid [class*="span"].center, .center {
+    margin: 0 auto;
+    float: none;
+}
+
+.big-input {
+    width:114px;
+    height: 80px;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/**
+ * Extra large button extensions. Extends `.btn`.
+ */
+.btn-xlarge {
+    padding: 18px 28px;
+    font-size: 22px;
+    line-height: normal;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+
+.btn-mediumlarge {
+    padding: 13px 23px;
+    font-size: 15px;
+    line-height: normal;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+
+input.edit-btn-large {
+    font-size: 20px;
+    width: 120px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.center-align {
+    display:inline-block !important;
+    text-align: center;
+    vertical-align: middle !important;
+    float:none;
+}
+
+#error_explanation {
+    color: #f00;
+    align: center;
+    ul {
+        list-style: none;
+        margin: 0 0 18px 0;
+    }
+}
+
+.field_with_errors {
+@extend .control-group;
+@extend .error;
+}
