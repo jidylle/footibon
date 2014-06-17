@@ -58,6 +58,7 @@
         <div class="thumbnail">
           <%= image_tag "http://mqtechbucketus.s3.amazonaws.com/"+p.id.to_s+".jpg", :class => "last_prono_img", :alt => "Pronostic" %>
           <div class="caption">
+            <% if p.user %>
             <div class="row-fluid">
               <div class="span6">
                 <%= image_tag p.user.avatar, :alt => "avatar" %>
@@ -66,6 +67,7 @@
                 <%=p.user.name%>
               </div>
             </div>
+            <% end %>
             <div class="row-fluid">
               <div class="span12">
                 <%=link_to "Faire mon pronostic", new_match_pronostics_path(p.match), :class=>"btn btn-block btn-info"%>
