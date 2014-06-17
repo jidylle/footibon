@@ -11,6 +11,8 @@ class PronosticsController < ApplicationController
     else
       @pronostics = Pronostic.all
     end
+    @pronostics = Pronostic.paginate(page: params[:page], per_page: 30).order('created_at DESC')
+
 
     respond_to do |format|
       format.html # index.html.erb
@@ -21,7 +23,6 @@ class PronosticsController < ApplicationController
   # GET /pronostics/1
   # GET /pronostics/1.json
   def show
-
     session.delete :pronostic_before_signin
     @pronostic = Pronostic.find(params[:id])
     @url_s3_pronostic=getAmazonLink+@pronostic.id.to_s+".jpg"
@@ -46,6 +47,14 @@ class PronosticsController < ApplicationController
     @pronostic = Pronostic.new
     @pronostic.match=@match
 
+    if current_user
+      old_pronostic=Pronostic.where("user_id = ?",current_user.id).first!#where("user_id = ? AND match_id = ?",current_user.id,@pronostic.match.id).first
+      if old_pronostic
+        redirect_to pronostic_path(old_pronostic), :flash => { :error => "Vous avez déjà pronostiqué ce match" }
+        return
+      end
+    end
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @pronostic }
@@ -64,6 +73,10 @@ class PronosticsController < ApplicationController
       @pronostic = Pronostic.new(params[:pronostic])
     else
       @pronostic = session[:pronostic_before_signin]
+    end
+
+    if Pronostic.where("user_id = ? AND match_id=?",current_user.id,@pronostic.match.id).take!
+      return
     end
 
     @pronostic.user = current_user

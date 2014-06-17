@@ -1,0 +1,80 @@
+<div class="jumbotron masthead">
+  <div class="container">
+    <h1><span style="color: green">Foot</span><span style="color: #EFCD3B">i</span><span style="color: green">Bon</span></h1>
+    <p>Et toi, ton pronostic?</p>
+    <p><%= link_to "Voir les matchs", matches_path, :class=>"btn btn-primary btn-large" %></p>
+    <ul class="masthead-links">
+      <li>Version beta</li>
+    </ul>
+  </div>
+</div>
+
+<div class="bs-docs-social">
+  <div class="container">
+    <ul class="bs-docs-social-buttons">
+      <li>
+        <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=twitter&repo=bootstrap&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
+      </li>
+      <li>
+        <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=twitter&repo=bootstrap&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="98px" height="20px"></iframe>
+      </li>
+      <li class="follow-btn">
+        <a href="https://twitter.com/twbootstrap" class="twitter-follow-button" data-link-color="#0069D6" data-show-count="true">Follow @twbootstrap</a>
+      </li>
+      <li class="tweet-btn">
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://twitter.github.com/bootstrap/" data-count="horizontal" data-via="twbootstrap" data-related="mdo:Creator of Twitter Bootstrap">Tweet</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="container">
+  <div class="marketing">
+    <h1><%= logo%>, c'est quoi?</h1>
+    <div class="row-fluid">
+      <div class="span4">
+        <%= image_tag 'welcome_prono.png' %>
+        <h3>Pronostiquer, c'est fun</h3>
+        <p>FootiBon est le jeu permettant de défier ses amis en pronostiquant les résultats des matchs de la plus grande compétition mondiale de Foot en 2014</p>
+      </div>
+      <div class="span4">
+        <%= image_tag 'welcome_partager.png' %>
+        <h3>Partager, c'est simple</h3>
+        <p>Estimer les résultats d’un match et les partager avec ses amis n’a jamais été aussi simple</p>
+      </div>
+      <div class="span4">
+        <%= image_tag 'welcome_cadeau.png' %>
+        <h3>Amusez-vous, c'est cadeau</h3>
+        <p>Conçu entre amis développeurs antillais lors d'un évènement tech appelé CodingBélè, FootiBon est complètement gratuit et n'a aucun but lucratif. Let's go !</p>
+      </div>
+    </div>
+
+    <hr class="soften" />
+
+    <h2>Ils viennent de faire leur pronostic sur <%= logo%>... Quel est le tien?</h2>
+    <div class="row-fluid">
+      <% @last_four_pronostics.each do |p|%>
+      <div class="span3 box">
+        <div class="thumbnail">
+          <%= image_tag "http://mqtechbucketus.s3.amazonaws.com/"+p.id.to_s+".jpg", :class => "last_prono_img", :alt => "Pronostic" %>
+          <div class="caption">
+            <div class="row-fluid">
+              <div class="span6">
+                <%= image_tag p.user.avatar, :alt => "avatar" %>
+              </div>
+              <div class="span6">
+                <%=p.user.name%>
+              </div>
+            </div>
+            <div class="row-fluid">
+              <div class="span12">
+                <%=link_to "Faire mon pronostic", new_match_pronostics_path(p.match), :class=>"btn btn-block btn-info"%>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

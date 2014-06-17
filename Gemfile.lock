@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/rweng/jquery-datatables-rails.git
+  revision: d637e0967dc66e9824345009ad74fbfdb1e4349f
+  specs:
+    jquery-datatables-rails (1.12.2)
+      jquery-rails
+      sass-rails
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -165,6 +173,9 @@ GEM
       json (>= 1.8.0)
     warden (1.2.3)
       rack (>= 1.0)
+    will_paginate (3.0.5)
+    will_paginate-bootstrap (0.2.5)
+      will_paginate (>= 3.0.3)
 
 PLATFORMS
   ruby
@@ -173,6 +184,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   devise
   fb_graph
+  jquery-datatables-rails!
   jquery-rails
   meta_request
   mini_magick
@@ -187,3 +199,4 @@ DEPENDENCIES
   sqlite3
   twitter-bootstrap-rails
   uglifier (>= 1.0.3)
+  will_paginate-bootstrap (= 0.2.5)

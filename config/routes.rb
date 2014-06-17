@@ -1,10 +1,14 @@
 Pronosport2::Application.routes.draw do
 
+  get "welcome/index"
+
   get 'matches/random', to: 'matches#random'
+
+  get '/privacypolicy', :to => redirect('/privacypolicy.html')
 
   resources :pronostics
 
-  get 'pronostics/sign', to: 'pronostics#create', as: 'create_after_signin_pronostic'
+  get 'pronostics/:id', to: 'pronostics#create', as: 'create_after_signin_pronostic'
 
   resources :matches do
     resource :pronostics
@@ -13,7 +17,7 @@ Pronosport2::Application.routes.draw do
 
   resources :equipes
 
-  root :to => "matches#index"
+  root :to => "welcome#index"
 
   devise_for :users, :controllers => {:omniauth_callbacks => "omniauth_callbacks"}
 

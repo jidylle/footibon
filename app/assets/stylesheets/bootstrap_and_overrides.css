@@ -6,6 +6,16 @@
   =require twitter-bootstrap-static/fontawesome
   */
 
+.biglogo{
+    font-size: 30px;
+}
+
+.navbar-text img {
+    max-height:30px;
+    width:auto;
+    vertical-align:middle;
+}
+
 .row-fluid [class*="span"].center, .center {
     margin: 0 auto;
     float: none;

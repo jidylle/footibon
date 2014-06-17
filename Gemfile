@@ -58,3 +58,7 @@ gem 's3'
 gem 'social-share-button'
 
 gem 'open_uri_redirections'
+
+gem 'will_paginate-bootstrap', '0.2.5'
+
+gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'

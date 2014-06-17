@@ -12,6 +12,7 @@
 
   </div>
 </div>
+
 <table class="table table-striped table-hover">
   <thead>
     <tr>
@@ -46,4 +47,6 @@
     <% end %>
   </tbody>
 </table>
+<%= will_paginate @pronostics, renderer: BootstrapPagination::Rails %>
+
 
