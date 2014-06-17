@@ -26,6 +26,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="application.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="32" selection-start="393" selection-end="393" vertical-scroll-proportion="-10.625" vertical-offset="0" max-vertical-offset="495">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="pronostics_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/pronostics_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
@@ -47,7 +56,7 @@
       <file leaf-file-name="_header.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="12" selection-start="2932" selection-end="2956" vertical-scroll-proportion="-2.9166667" vertical-offset="890" max-vertical-offset="1320">
+            <state line="64" column="12" selection-start="2932" selection-end="2956" vertical-scroll-proportion="-40.0" vertical-offset="0" max-vertical-offset="1320">
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#p#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -58,10 +67,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="welcome_layout.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="welcome_layout.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/welcome_layout.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="38" selection-start="38" selection-end="38" vertical-scroll-proportion="8.75" vertical-offset="210" max-vertical-offset="570">
+            <state line="10" column="42" selection-start="218" selection-end="218" vertical-scroll-proportion="0.34013605" vertical-offset="0" max-vertical-offset="441">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_footer.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/layouts/_footer.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="9" selection-start="586" selection-end="586" vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="225">
               <folding />
             </state>
           </provider>
@@ -94,28 +112,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="metal.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.1.1/gems/actionpack-3.2.17/lib/action_controller/metal.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="203" column="0" selection-start="5625" selection-end="5625" vertical-scroll-proportion="0.0" vertical-offset="2924" max-vertical-offset="3840">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/welcome/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="21" selection-start="3138" selection-end="3138" vertical-scroll-proportion="0.6542056" vertical-offset="755" max-vertical-offset="1305">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="router.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.1.1/gems/journey-1.0.4/lib/journey/router.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="0" selection-start="1637" selection-end="1637" vertical-scroll-proportion="0.0" vertical-offset="1004" max-vertical-offset="2265">
+            <state line="47" column="11" selection-start="2226" selection-end="2318" vertical-scroll-proportion="-5.3333335" vertical-offset="577" max-vertical-offset="1305">
               <folding />
             </state>
           </provider>
@@ -170,8 +170,6 @@
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
         <option value="$PROJECT_DIR$/app/views/pronostics/index.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/pronostics.js" />
-        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/welcome_layout.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
         <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/welcome_controller.rb" />
@@ -180,6 +178,9 @@
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_header.html.erb" />
         <option value="$PROJECT_DIR$/app/views/welcome/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/layouts/_footer.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/layouts/welcome_layout.html.erb" />
       </list>
     </option>
   </component>
@@ -910,11 +911,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/db/migrate/20140612031649_add_provider_to_users.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="446" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20140614115139_add_name_to_users.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="446">
@@ -1118,13 +1114,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="38" selection-start="38" selection-end="38" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="139" selection-start="250" selection-end="250" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
@@ -1232,7 +1221,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="12" selection-start="2932" selection-end="2956" vertical-scroll-proportion="-2.9166667" vertical-offset="890" max-vertical-offset="1320">
+        <state line="64" column="12" selection-start="2932" selection-end="2956" vertical-scroll-proportion="-40.0" vertical-offset="0" max-vertical-offset="1320">
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#p#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1242,16 +1231,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/welcome_layout.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/welcome/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="38" selection-start="38" selection-end="38" vertical-scroll-proportion="8.75" vertical-offset="210" max-vertical-offset="570">
+        <state line="47" column="11" selection-start="2226" selection-end="2318" vertical-scroll-proportion="-5.3333335" vertical-offset="577" max-vertical-offset="1305">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/welcome/index.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/_footer.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="21" selection-start="3138" selection-end="3138" vertical-scroll-proportion="0.6542056" vertical-offset="755" max-vertical-offset="1305">
+        <state line="9" column="9" selection-start="586" selection-end="586" vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="225">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="32" selection-start="393" selection-end="393" vertical-scroll-proportion="-10.625" vertical-offset="0" max-vertical-offset="495">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/welcome_layout.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="42" selection-start="218" selection-end="218" vertical-scroll-proportion="0.34013605" vertical-offset="0" max-vertical-offset="441">
           <folding />
         </state>
       </provider>
