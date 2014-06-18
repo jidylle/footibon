@@ -14,11 +14,6 @@
  *= require_tree .
  */
 
-.drapeau{
-    width: 114px;
-    height: 80px;
-}
-
 .right-align {
     text-align: right;
 }

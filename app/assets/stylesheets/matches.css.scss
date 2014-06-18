@@ -1,3 +1,59 @@
 // Place all the styles related to the matches controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.drapeau{
+  width: 114px;
+  height: 80px;
+}
+
+/**
+ * Extra large button extensions. Extends `.btn`.
+ */
+.btn-xlarge {
+  padding: 18px 28px;
+  font-size: 22px;
+  line-height: normal;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+
+.btn-mediumlarge {
+  padding: 13px 23px;
+  font-size: 15px;
+  line-height: normal;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+
+
+@media (max-width: 480px) {
+  .drapeau{
+    width: 64px;
+    height: 30px;
+  }
+  .nom_equipe{
+    font-size: small;
+  }
+
+  .btn-xlarge {
+    padding: 0px 0px;
+    font-size: 10px;
+    line-height: normal;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+  }
+
+  .btn-mediumlarge {
+    padding: 0px 0px;
+    font-size: 10px;
+    line-height: normal;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+  }
+}

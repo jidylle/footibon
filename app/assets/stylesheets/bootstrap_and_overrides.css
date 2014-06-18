@@ -6,6 +6,16 @@
   =require twitter-bootstrap-static/fontawesome
   */
 
+.pagination ul>li>a, .pagination ul>li>span {
+    float: left;
+    padding: 4px 12px;
+    line-height: 20px;
+    text-decoration: none;
+    background-color: #6d3353;
+    border: 1px solid #dddddd;
+    border-left-width: 0;
+}
+
 .biglogo{
     font-size: 30px;
 }
@@ -29,26 +39,6 @@
     text-align: center;
 }
 
-/**
- * Extra large button extensions. Extends `.btn`.
- */
-.btn-xlarge {
-    padding: 18px 28px;
-    font-size: 22px;
-    line-height: normal;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    border-radius: 8px;
-}
-
-.btn-mediumlarge {
-    padding: 13px 23px;
-    font-size: 15px;
-    line-height: normal;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    border-radius: 8px;
-}
 
 input.edit-btn-large {
     font-size: 20px;
