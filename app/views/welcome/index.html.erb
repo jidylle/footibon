@@ -51,11 +51,11 @@
           <div class="caption">
             <% if p.user %>
             <div class="row-fluid">
-              <div class="span6">
+              <div class="span3">
                 <%= image_tag p.user.avatar, :alt => "avatar" %>
               </div>
-              <div class="span6">
-                <%=p.user.name%>
+              <div class="span9">
+                <%=p.user.name%> pense que le match <%=p.match.phrase%> se terminera à <%=p.score_prono%>
               </div>
             </div>
             <% end %>

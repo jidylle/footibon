@@ -1,3 +1,13 @@
 // Place all the styles related to the pronostics controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.pronostic .table{
+  width: 60%;
+  margin: 0 auto !important;
+  float: none !important;
+}
+
+.pronostic .table td {
+  text-align: center;
+}

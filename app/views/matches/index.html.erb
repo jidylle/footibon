@@ -8,7 +8,8 @@
       <th><%= model_class.human_attribute_name(:date_match) %></th>
       <th><%= model_class.human_attribute_name(:equipe1_id) %></th>
       <th><%= model_class.human_attribute_name(:equipe2_id) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <th>Faire son pronostic</th>
+      <th>Pronostics réalisés</th>
     </tr>
   </thead>
   <tbody>
@@ -26,16 +27,19 @@
               <%= link_to "FAIRE MON PRONOSTIC",
                           new_match_pronostics_path(match), :class => 'btn btn-warning btn-mediumlarge' %> </br>
           <% end %>
+
+        </td>
+        <td>
           <%= link_to "Voir les pronostics",
                       match_path(match), :class => 'btn btn-info' %>
           <% if current_user && current_user.is_admin%>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_match_path(match), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      match_path(match),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
+              <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                          edit_match_path(match), :class => 'btn btn-mini' %>
+              <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                          match_path(match),
+                          :method => :delete,
+                          :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                          :class => 'btn btn-mini btn-danger' %>
           <% end %>
         </td>
       </tr>

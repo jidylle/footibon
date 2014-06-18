@@ -6,9 +6,9 @@ Pronosport2::Application.routes.draw do
 
   get '/privacypolicy', :to => redirect('/privacypolicy.html')
 
-  resources :pronostics
+  match 'pronostics/create', to: 'pronostics#create', as: 'create_after_signin_pronostic'
 
-  get 'pronostics/:id', to: 'pronostics#create', as: 'create_after_signin_pronostic'
+  resources :pronostics
 
   resources :matches do
     resource :pronostics

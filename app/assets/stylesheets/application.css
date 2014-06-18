@@ -127,7 +127,11 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background-image: url("/assets/fond_welcome.jpg");
+    background: url("/assets/fond_welcome.jpg") no-repeat 100%;
+    -webkit-background-size: cover; /* pour Chrome et Safari */
+    -moz-background-size: cover; /* pour Firefox */
+    -o-background-size: cover; /* pour Opera */
+    background-size: cover; /* version standardisée */
     opacity: .4;
 }
 
