@@ -6,16 +6,20 @@
     </div>
   </div>
   <div class="control-group">
+    <% if @match.equipe1%>
     Equipe 1: <%= image_tag @match.equipe1.drapeau, :class => "drapeau"  %><%=@match.equipe1.nom %>
+    <% end %>
     <div class="controls">
-      <%= f.hidden_field :equipe1_id, :class => 'number_field' %>
+      <%= f.collection_select(:equipe1_id, Equipe.all, :id, :nom) %>
       <%= f.number_field :score1, :class => 'number_field', :placeholder => "Score1" %>
     </div>
   </div>
   <div class="control-group">
+    <% if @match.equipe2%>
     Equipe 2: <%= image_tag @match.equipe2.drapeau, :class => "drapeau"  %><%=@match.equipe2.nom %>
+    <% end %>
     <div class="controls">
-      <%= f.hidden_field :equipe2_id, :class => 'number_field' %>
+      <%= f.collection_select(:equipe2_id, Equipe.all, :id, :nom) %>
       <%= f.number_field :score2, :class => 'number_field', :placeholder => "Score2" %>
     </div>
   </div>

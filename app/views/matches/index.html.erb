@@ -2,8 +2,8 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
 </div>
-<div class="table-responsive">
 <table class="table table-striped">
+  <caption><h1>Matchs du jour</h1></caption>
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:date_match) %></th>
@@ -14,7 +14,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @matches.each do |match| %>
+    <% @matchs_du_jour.each do |match| %>
       <tr>
         <td><%= match.date_match %></td>
         <td><%= image_tag match.equipe1.drapeau, :class => "drapeau" %></br><h2 class="nom_equipe"><%= match.equipe1.nom %></h2></td>
@@ -47,7 +47,101 @@
     <% end %>
   </tbody>
 </table>
-</div>
+<hr class="soften" />
+<table class="table table-striped">
+  <caption><h1>Matchs à venir</h1></caption>
+  <thead>
+  <tr>
+    <th><%= model_class.human_attribute_name(:date_match) %></th>
+    <th><%= model_class.human_attribute_name(:equipe1_id) %></th>
+    <th><%= model_class.human_attribute_name(:equipe2_id) %></th>
+    <th>Faire son pronostic</th>
+    <th>Pronostics réalisés</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @matchs_a_venir.each do |match| %>
+      <tr>
+        <td><%= match.date_match %></td>
+        <td><%= image_tag match.equipe1.drapeau, :class => "drapeau" %></br><h2 class="nom_equipe"><%= match.equipe1.nom %></h2></td>
+        <td><%= image_tag match.equipe2.drapeau, :class => "drapeau" %></br><h2 class="nom_equipe"><%= match.equipe2.nom %></h2></td>
+        <td>
+          <% if match.is_start?%>
+              Trop tard pour un pronostic! Match en cours...</br>
+          <% elsif match.is_finished%>
+              Match terminé (<%= match.score_final %>) </br>
+          <% else %>
+              <%= link_to "FAIRE MON PRONOSTIC",
+                          new_match_pronostics_path(match), :class => 'btn btn-warning btn-mediumlarge' %> </br>
+          <% end %>
+
+        </td>
+        <td>
+          <%= link_to "Voir les pronostics",
+                      match_path(match), :class => 'btn btn-info btn-mediumlarge' %>
+          <% if current_user && current_user.is_admin%>
+              <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                          edit_match_path(match), :class => 'btn btn-mini' %>
+              <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                          match_path(match),
+                          :method => :delete,
+                          :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                          :class => 'btn btn-mini btn-danger' %>
+          <% end %>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<hr class="soften" />
+
+<table class="table table-striped">
+  <caption><h1>Matchs terminés</h1></caption>
+  <thead>
+  <tr>
+    <th><%= model_class.human_attribute_name(:date_match) %></th>
+    <th><%= model_class.human_attribute_name(:equipe1_id) %></th>
+    <th><%= model_class.human_attribute_name(:equipe2_id) %></th>
+    <th>Faire son pronostic</th>
+    <th>Pronostics réalisés</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @matchs_termines.each do |match| %>
+      <tr>
+        <td><%= match.date_match %></td>
+        <td><%= image_tag match.equipe1.drapeau, :class => "drapeau" %></br><h2 class="nom_equipe"><%= match.equipe1.nom %></h2></td>
+        <td><%= image_tag match.equipe2.drapeau, :class => "drapeau" %></br><h2 class="nom_equipe"><%= match.equipe2.nom %></h2></td>
+        <td>
+          <% if match.is_start?%>
+              Trop tard pour un pronostic! Match en cours...</br>
+          <% elsif match.is_finished%>
+              Match terminé (<%= match.score_final %>) </br>
+          <% else %>
+              <%= link_to "FAIRE MON PRONOSTIC",
+                          new_match_pronostics_path(match), :class => 'btn btn-warning btn-mediumlarge' %> </br>
+          <% end %>
+
+        </td>
+        <td>
+          <%= link_to "Voir les pronostics",
+                      match_path(match), :class => 'btn btn-info btn-mediumlarge' %>
+          <% if current_user && current_user.is_admin%>
+              <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                          edit_match_path(match), :class => 'btn btn-mini' %>
+              <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                          match_path(match),
+                          :method => :delete,
+                          :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                          :class => 'btn btn-mini btn-danger' %>
+          <% end %>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
 <% if current_user && current_user.is_admin%>
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_match_path,

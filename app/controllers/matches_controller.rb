@@ -2,7 +2,13 @@ class MatchesController < ApplicationController
   # GET /matches
   # GET /matches.json
   def index
-    @matches = Match.all
+    @matchs_du_jour = Match.find_all_by_date_match(DateTime.now.to_date)
+
+    @matchs_termines = Match.where("score1>0")
+
+    @matchs_a_venir = Match.where("date_match > ? ",DateTime.now.to_date)
+
+
 
     respond_to do |format|
       format.html # index.html.erb
