@@ -103,7 +103,7 @@
     <th><%= model_class.human_attribute_name(:date_match) %></th>
     <th><%= model_class.human_attribute_name(:equipe1_id) %></th>
     <th><%= model_class.human_attribute_name(:equipe2_id) %></th>
-    <th>Faire son pronostic</th>
+    <th>Score final</th>
     <th>Pronostics réalisés</th>
   </tr>
   </thead>
@@ -114,15 +114,7 @@
         <td><%= image_tag match.equipe1.drapeau, :class => "drapeau" %></br><h2 class="nom_equipe"><%= match.equipe1.nom %></h2></td>
         <td><%= image_tag match.equipe2.drapeau, :class => "drapeau" %></br><h2 class="nom_equipe"><%= match.equipe2.nom %></h2></td>
         <td>
-          <% if match.is_start?%>
-              Trop tard pour un pronostic! Match en cours...</br>
-          <% elsif match.is_finished%>
-              Match terminé (<%= match.score_final %>) </br>
-          <% else %>
-              <%= link_to "FAIRE MON PRONOSTIC",
-                          new_match_pronostics_path(match), :class => 'btn btn-warning btn-mediumlarge' %> </br>
-          <% end %>
-
+          Match terminé (<%= match.score_final %>)
         </td>
         <td>
           <%= link_to "Voir les pronostics",

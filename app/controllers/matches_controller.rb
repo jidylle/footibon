@@ -4,7 +4,7 @@ class MatchesController < ApplicationController
   def index
     @matchs_du_jour = Match.find_all_by_date_match(DateTime.now.to_date)
 
-    @matchs_termines = Match.where("score1>0")
+    @matchs_termines = Match.where("date_match < ? ",DateTime.now.to_date)
 
     @matchs_a_venir = Match.where("date_match > ? ",DateTime.now.to_date)
 

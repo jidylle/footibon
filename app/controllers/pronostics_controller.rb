@@ -118,7 +118,7 @@ class PronosticsController < ApplicationController
     respond_to do |format|
       if @pronostic.save
         store_in_s3(file_tmp_path, @pronostic.id)
-        share_on_facebook @pronostic
+        #share_on_facebook @pronostic
         format.html { redirect_to @pronostic, notice: 'Pronostic was successfully created.' }
         format.json { render json: @pronostic, status: :created, location: @pronostic }
       else
@@ -188,11 +188,11 @@ class PronosticsController < ApplicationController
   def share_on_facebook pronostic
     user = FbGraph::User.me(current_user.fbtoken).fetch
     user.feed!(
-        :message => 'Voici mon pronostic pour le match '+ pronostic.match.phrase + ". Ka ou ka di?",
+        :message => pronostic.score_prono+', voici mon pronostic pour le match '+ pronostic.match.phrase + ". Qu'en penses-tu?",
         :picture => getAmazonLink + pronostic.id.to_s + ".jpg",
         :link => pronostic_url(pronostic),
         :name => user.name + ' pense que le match '+ pronostic.match.phrase + ' se terminera sur le score de '+pronostic.score1.to_s+'-'+pronostic.score2.to_s,
-        :description => 'Toi aussi, donne ton pronostic sur FOOTIBON et tente de gagner de magnifiques cadeaux !'
+        :description => 'Toi aussi, défis tes amis et donne ton pronostic sur FootiBon !'
     )
   end
 end
