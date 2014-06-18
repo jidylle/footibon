@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   devise :omniauthable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :provider, :uid, :avatar, :fbtoken
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :provider, :uid, :avatar, :fbtoken, :score
   # attr_accessible :title, :body
 
   has_many :pronostics

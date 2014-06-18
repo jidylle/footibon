@@ -2,6 +2,8 @@ Pronosport2::Application.routes.draw do
 
   get "welcome/index"
 
+  get "/classement", to: 'classements#index', as: 'classement'
+
   get 'matches/random', to: 'matches#random'
 
   get '/privacypolicy', :to => redirect('/privacypolicy.html')
