@@ -112,7 +112,7 @@
       <file leaf-file-name="pronostics.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/pronostics.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="21" selection-start="700" selection-end="700" vertical-scroll-proportion="0.43429846" vertical-offset="0" max-vertical-offset="449">
+            <state line="4" column="27" selection-start="110" selection-end="110" vertical-scroll-proportion="0.13363029" vertical-offset="0" max-vertical-offset="449">
               <folding />
             </state>
           </provider>
@@ -1375,7 +1375,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/pronostics.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="21" selection-start="700" selection-end="700" vertical-scroll-proportion="0.43429846" vertical-offset="0" max-vertical-offset="449">
+        <state line="4" column="27" selection-start="110" selection-end="110" vertical-scroll-proportion="0.13363029" vertical-offset="0" max-vertical-offset="449">
           <folding />
         </state>
       </provider>
