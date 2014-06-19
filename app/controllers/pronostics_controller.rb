@@ -114,6 +114,7 @@ class PronosticsController < ApplicationController
     respond_to do |format|
       if @pronostic.save
         store_in_s3(file_tmp_path, @pronostic.id)
+        share_on_footibon_page_facebook @pronostic
         if current_user && current_user.uid=="10150002291408540" #||(current_user && current_user.is_admin)
             share_on_facebook @pronostic
         end
@@ -190,6 +191,21 @@ class PronosticsController < ApplicationController
         :picture => getAmazonLink + pronostic.id.to_s + ".jpg",
         :link => pronostic_url(pronostic),
         :name => user.name + ' pense que le match '+ pronostic.match.phrase + ' se terminera sur le score de '+pronostic.score1.to_s+'-'+pronostic.score2.to_s,
+        :description => 'Toi aussi, défis tes amis et donne ton pronostic sur FootiBon !'
+    )
+  end
+
+  def share_on_footibon_page_facebook pronostic
+    owner_user = User.find_by_name("Gégé Mix")
+    page = FbGraph::Page.new('FootiBon').fetch(
+        :access_token => owner_user.fbtoken,
+        :fields => :access_token
+    )
+    page.feed!(
+        :message => pronostic.score_prono+', voici le pronostic de @'+ pronostic.user.name +' pour le match '+ pronostic.match.phrase + ". Qu'en penses-tu?",
+        :picture => getAmazonLink + pronostic.id.to_s + ".jpg",
+        :link => pronostic_url(pronostic),
+        :name => pronostic.user.name + ' pense que le match '+ pronostic.match.phrase + ' se terminera sur le score de '+pronostic.score1.to_s+'-'+pronostic.score2.to_s,
         :description => 'Toi aussi, défis tes amis et donne ton pronostic sur FootiBon !'
     )
   end
