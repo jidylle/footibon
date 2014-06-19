@@ -202,10 +202,10 @@ class PronosticsController < ApplicationController
         :fields => :access_token
     )
     page.feed!(
-        :message => pronostic.score_prono+', voici le pronostic de @'+ pronostic.user.name +' pour le match '+ pronostic.match.phrase + ". Qu'en penses-tu?",
+        :message => pronostic.score_prono+', voici mon pronostic de '+pronostic.user.name+' pour le match '+ pronostic.match.phrase + ". Qu'en penses-tu?",
         :picture => getAmazonLink + pronostic.id.to_s + ".jpg",
         :link => pronostic_url(pronostic),
-        :name => pronostic.user.name + ' pense que le match '+ pronostic.match.phrase + ' se terminera sur le score de '+pronostic.score1.to_s+'-'+pronostic.score2.to_s,
+        :name => pronostic.user.name + " pense que le match "+ pronostic.match.phrase + " se terminera sur le score de "+pronostic.score1.to_s+"-"+pronostic.score2.to_s,
         :description => 'Toi aussi, défis tes amis et donne ton pronostic sur FootiBon !'
     )
   end
