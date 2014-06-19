@@ -2,6 +2,7 @@ $('#share_button').click(function(e){
     e.preventDefault();
     FB.ui(
         {
+            display: 'popup',
             method: 'feed',
             name: user_name +' pense que le match '+ match_name+' se terminera sur le score de '+prono_score,
             link: url,

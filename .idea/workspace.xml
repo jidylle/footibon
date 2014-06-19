@@ -53,10 +53,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/classements/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="146" selection-start="337" selection-end="337" vertical-scroll-proportion="0.21176471" vertical-offset="0" max-vertical-offset="600">
+            <state line="6" column="146" selection-start="337" selection-end="337" vertical-scroll-proportion="-3.75" vertical-offset="0" max-vertical-offset="600">
               <folding />
             </state>
           </provider>
@@ -109,10 +109,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pronostics.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="pronostics.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/pronostics.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="16" selection-start="4" selection-end="16" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+            <state line="13" column="21" selection-start="700" selection-end="700" vertical-scroll-proportion="0.43429846" vertical-offset="0" max-vertical-offset="449">
               <folding />
             </state>
           </provider>
@@ -172,13 +172,13 @@
         <option value="$PROJECT_DIR$/app/views/pronostics/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/pronostics/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_header.html.erb" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/pronostics.js" />
         <option value="$PROJECT_DIR$/app/models/match.rb" />
         <option value="$PROJECT_DIR$/app/models/pronostic.rb" />
         <option value="$PROJECT_DIR$/app/controllers/matches_controller.rb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/matches.css.scss" />
         <option value="$PROJECT_DIR$/app/views/pronostics/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/classements/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/pronostics.js" />
       </list>
     </option>
   </component>
@@ -1315,13 +1315,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/pronostics.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="16" selection-start="4" selection-end="16" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/pronostics_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="189" column="8" selection-start="5796" selection-end="6273" vertical-scroll-proportion="0.0" vertical-offset="2696" max-vertical-offset="3270">
@@ -1375,7 +1368,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/classements/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="146" selection-start="337" selection-end="337" vertical-scroll-proportion="0.21176471" vertical-offset="0" max-vertical-offset="600">
+        <state line="6" column="146" selection-start="337" selection-end="337" vertical-scroll-proportion="-3.75" vertical-offset="0" max-vertical-offset="600">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/pronostics.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="21" selection-start="700" selection-end="700" vertical-scroll-proportion="0.43429846" vertical-offset="0" max-vertical-offset="449">
           <folding />
         </state>
       </provider>
