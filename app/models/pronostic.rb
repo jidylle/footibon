@@ -22,4 +22,18 @@ class Pronostic < ActiveRecord::Base
     "http://"+ENV['footibon_s3_bucket']+".s3.amazonaws.com/"+id.to_s+".jpg"
   end
 
+  def global_result
+    if score1==score2
+      "match_nul"
+    elsif score1>score2
+      "equipe1"
+    else
+      "equipe2"
+    end
+  end
+
+  def global_win?
+    match.global_result==global_result
+  end
+
 end

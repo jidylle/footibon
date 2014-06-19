@@ -76,6 +76,12 @@ class MatchesController < ApplicationController
               player.score=player.score+3
               player.save
             end
+          elsif p.global_win?
+            player=p.user
+            if player
+              player.score=player.score+1
+              player.save
+            end
           end
         end
         format.html { redirect_to @match, notice: 'Match was successfully updated.' }

@@ -16,4 +16,14 @@ class Match < ActiveRecord::Base
   def score_final
     score1.to_s + "-" + score2.to_s
   end
+
+  def global_result
+    if score1==score2
+      "match_nul"
+    elsif score1>score2
+      "equipe1"
+    else
+      "equipe2"
+    end
+  end
 end
