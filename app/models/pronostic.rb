@@ -18,4 +18,8 @@ class Pronostic < ActiveRecord::Base
     match.is_finished && !win?
   end
 
+  def url_s3
+    "http://"+ENV['footibon_s3_bucket']+".s3.amazonaws.com/"+id.to_s+".jpg"
+  end
+
 end

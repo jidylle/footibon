@@ -1,8 +1,8 @@
 <% content_for :for_head do %>
     <meta content=<%= pronostic_url(@pronostic) %> property="og:url">
-    <meta content=<%= @url_s3_pronostic %> property="og:image"> <!-- image en 200x200px -->
-    <meta content="Voici mon pronostic pour le match <%= @match_phrase %>" property="og:title">
-    <meta content="Je pense que le match se terminera avec ce score" property="og:description">
+    <meta content=<%= @pronostic.url_s3 %> property="og:image"> <!-- image en 200x200px -->
+    <meta content=<%= "#{@pronostic.user.name} pense que le match #{@pronostic.match.phrase} se terminera sur le score de #{@pronostic.score1.to_s} - #{@pronostic.score2.to_s}"%> property="og:title">
+    <meta content="'Toi aussi, défis tes amis et donne ton pronostic pour les matchs de la coupe du monde 2014 sur FootiBon! Un pronostiqueur fun et gratuit!'," property="og:description">
 
 <% end %>
 
@@ -18,14 +18,14 @@
     <td><%=image_tag @pronostic.user.avatar  %></td>
   </tr>
   <tr>
-    <td><%= image_tag @url_s3_pronostic, :class => "result_prono_img", :alt => "Erreur de chargement..." %></td>
+    <td><%= image_tag @pronostic.url_s3, :class => "result_prono_img", :alt => "Erreur de chargement..." %></td>
   </tr>
   <tr>
     <td><a href="javascript:fbShare('<%= pronostic_url(@pronostic) %>',
-   'Voici mon pronostic pour le match <%= @match_phrase %>',
-   'Je pense que le match se terminera avec ce score',
-   '<%= @url_s3_pronostic %>',
-    520, 350)" class="btn btn-warning btn-xlarge">PARTAGER VOTRE PRONOSTIC</a></td>
+   <%= "#{@pronostic.user.name} pense que le match #{@pronostic.match.phrase} se terminera sur le score de #{@pronostic.score1.to_s} - #{@pronostic.score2.to_s}"%>,
+   'Toi aussi, défis tes amis et donne ton pronostic pour les matchs de la coupe du monde 2014 sur FootiBon! Un pronostiqueur fun et gratuit!',
+   '<%= @pronostic.url_s3 %>',
+    520, 350)" class="btn btn-warning btn-xlarge">PARTAGE TON PRONOSTIC</a></td>
   </tr>
 </table>
 </div>

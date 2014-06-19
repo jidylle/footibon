@@ -79,7 +79,7 @@
   <caption><h1>Matchs terminés</h1></caption>
   <tbody>
   <% @matchs_termines.each do |match| %>
-      <tr>
+      <tr class="success">
         <td><%= match.date_match %></td>
         <td><%= image_tag match.equipe1.drapeau, :class => "drapeau" %></br><h2 class="nom_equipe"><%= match.equipe1.nom %></h2></td>
         <td><%= image_tag match.equipe2.drapeau, :class => "drapeau" %></br><h2 class="nom_equipe"><%= match.equipe2.nom %></h2></td>

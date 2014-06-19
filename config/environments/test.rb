@@ -34,4 +34,6 @@ Pronosport2::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+
+  ENV['footibon_s3_bucket'] = "footibondev"
 end

@@ -40,7 +40,7 @@ class PronosticsController < ApplicationController
   end
 
   def getAmazonLink
-    "http://mqtechbucketus.s3.amazonaws.com/"
+    "http://footibondev.s3.amazonaws.com/"
   end
 
   # GET /pronostics/new
@@ -50,13 +50,7 @@ class PronosticsController < ApplicationController
     @pronostic = Pronostic.new
     @pronostic.match=@match
 
-    if current_user
-      old_pronostic=Pronostic.where("user_id = ? AND match_id = ?",current_user.id,@pronostic.match.id).first
-      if old_pronostic
-        redirect_to pronostic_path(old_pronostic), :flash => { :error => "Vous avez déjà pronostiqué ce match" }
-        return
-      end
-    end
+
 
     respond_to do |format|
       format.html # new.html.erb
@@ -101,13 +95,14 @@ class PronosticsController < ApplicationController
       c.compose "Over" # OverCompositeOp
       c.geometry "+560+125" # copy second_image onto first_image from (20, 20)
     end
-
+    nom_equipe1=I18n.transliterate(@pronostic.match.equipe1.nom).gsub("'", '')
+    nom_equipe2=I18n.transliterate(@pronostic.match.equipe2.nom).gsub("'", '')
     result.combine_options do |c|
       c.font "#{Rails.root}/public/signika-bold.ttf"
       c.pointsize '25'
       c.fill("#ffffff")
-      c.draw "text 380,145 '#{@pronostic.match.equipe1.nom}'"
-      c.draw "text 735,145 '#{@pronostic.match.equipe2.nom}'"
+      c.draw "text 380,145 '#{nom_equipe1}'"
+      c.draw "text 735,145 '#{nom_equipe2}'"
       c.pointsize '100'
       c.draw "text 380,220 '#{@pronostic.score1}'"
       c.draw "text 740,220 '#{@pronostic.score2}'"
@@ -119,7 +114,9 @@ class PronosticsController < ApplicationController
     respond_to do |format|
       if @pronostic.save
         store_in_s3(file_tmp_path, @pronostic.id)
-        #share_on_facebook @pronostic
+        if current_user && current_user.uid=="10150002291408540" #||(current_user && current_user.is_admin)
+            share_on_facebook @pronostic
+        end
         format.html { redirect_to @pronostic, notice: 'Pronostic was successfully created.' }
         format.json { render json: @pronostic, status: :created, location: @pronostic }
       else
@@ -162,10 +159,10 @@ class PronosticsController < ApplicationController
     service = S3::Service.new(:access_key_id => "AKIAJPVLATTZ3TYES3YQ",
                               :secret_access_key => "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")
 
-    mqtech_bucket = service.buckets.find("mqtechbucketus")
+    footibon_bucket = service.buckets.find(ENV['footibon_s3_bucket'])
     name=pronostic_id.to_s + ".jpg"
 
-    new_object = mqtech_bucket.objects.build(name)
+    new_object = footibon_bucket.objects.build(name)
     test=File.read(file_path, :encoding => "BINARY")
     new_object.content = test
     new_object.save

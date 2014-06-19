@@ -47,7 +47,7 @@
       <% @last_four_pronostics.each do |p|%>
       <div class="span3 box">
         <div class="thumbnail">
-          <%= image_tag "http://mqtechbucketus.s3.amazonaws.com/"+p.id.to_s+".jpg", :class => "last_prono_img", :alt => "Pronostic" %>
+          <%= image_tag p.url_s3, :class => "last_prono_img", :alt => "Pronostic" %>
           <div class="caption">
             <% if p.user %>
             <div class="row-fluid">

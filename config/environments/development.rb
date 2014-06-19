@@ -37,4 +37,6 @@ Pronosport2::Application.configure do
 
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
+  ENV['footibon_s3_bucket'] = "footibondev"
+
 end
