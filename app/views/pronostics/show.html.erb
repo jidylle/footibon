@@ -22,7 +22,7 @@
   </tr>
   <tr>
     <td><a href="javascript:fbShare('<%= pronostic_url(@pronostic) %>',
-   <%= "#{@pronostic.user.name} pense que le match #{@pronostic.match.phrase} se terminera sur le score de #{@pronostic.score1.to_s} - #{@pronostic.score2.to_s}"%>,
+   <%= "'#{@pronostic.user.name} pense que le match #{@pronostic.match.phrase} se terminera sur le score de #{@pronostic.score1.to_s} - #{@pronostic.score2.to_s}'"%>,
    'Toi aussi, défis tes amis et donne ton pronostic pour les matchs de la coupe du monde 2014 sur FootiBon! Un pronostiqueur fun et gratuit!',
    '<%= @pronostic.url_s3 %>',
     520, 350)" class="btn btn-warning btn-xlarge">PARTAGE TON PRONOSTIC</a></td>

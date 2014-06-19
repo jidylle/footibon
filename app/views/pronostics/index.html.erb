@@ -33,9 +33,10 @@
         <td><%= image_tag pronostic.match.equipe2.drapeau, :class => "drapeau" %></br><%= pronostic.match.equipe2.nom %></td>
         <td><h2><%= pronostic.score1 %></h2></td>
         <td><h2><%= pronostic.score2 %></h2></td>
+        <td><%= link_to "Détails",pronostic_path(pronostic.id),:class => "btn btn-info"%></td>
         <% if current_user && current_user.is_admin%>
         <td>
-          <%= link_to "Détails",pronostic_path(pronostic.id),:class => "btn btn-info"%>
+
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_pronostic_path(pronostic), :class => 'btn btn-mini' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),

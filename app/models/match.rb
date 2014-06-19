@@ -6,7 +6,7 @@ class Match < ActiveRecord::Base
   has_many :pronostics
 
   def phrase
-    equipe1.nom + "-" +equipe2.nom
+    equipe1.nom.gsub("'", ' ')+ "-" +equipe2.nom.gsub("'", ' ')
   end
 
   def is_finished
