@@ -1,3 +1,5 @@
+require 'will_paginate/array'
+
 class PronosticsController < ApplicationController
   before_filter :store_location, :only => [:create]
   before_filter :authenticate_user!,
@@ -6,12 +8,11 @@ class PronosticsController < ApplicationController
   # GET /pronostics
   # GET /pronostics.json
   def index
-    if(current_user && params[:sort]=="my")
-      @pronostics=Pronostic.find_all_by_user_id(current_user.id)
+    if(params.has_key?(:sortbyuser))
+      @pronostics=Pronostic.find_all_by_user_id(params[:sortbyuser]).paginate(page: params[:page], per_page: 20)
     else
-      @pronostics = Pronostic.all
+      @pronostics = Pronostic.paginate(page: params[:page], per_page: 20).order('created_at DESC')
     end
-    @pronostics = Pronostic.paginate(page: params[:page], per_page: 30).order('created_at DESC')
 
     if (current_user && current_user.fbtoken)
       user = FbGraph::User.me(current_user.fbtoken).fetch
@@ -49,13 +50,13 @@ class PronosticsController < ApplicationController
     @pronostic = Pronostic.new
     @pronostic.match=@match
 
-    #if current_user
-    #  old_pronostic=Pronostic.where("user_id = ?",current_user.id).first!#where("user_id = ? AND match_id = ?",current_user.id,@pronostic.match.id).first
-    #  if old_pronostic
-    #    redirect_to pronostic_path(old_pronostic), :flash => { :error => "Vous avez déjà pronostiqué ce match" }
-    #    return
-    #  end
-    #end
+    if current_user
+      old_pronostic=Pronostic.where("user_id = ? AND match_id = ?",current_user.id,@pronostic.match.id).first
+      if old_pronostic
+        redirect_to pronostic_path(old_pronostic), :flash => { :error => "Vous avez déjà pronostiqué ce match" }
+        return
+      end
+    end
 
     respond_to do |format|
       format.html # new.html.erb

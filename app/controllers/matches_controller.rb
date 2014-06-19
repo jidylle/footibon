@@ -8,8 +8,6 @@ class MatchesController < ApplicationController
 
     @matchs_a_venir = Match.where("date_match > ? ",DateTime.now.to_date)
 
-
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @matches }

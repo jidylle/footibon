@@ -1,18 +1,6 @@
 <%- model_class = Match -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
-</div>
 <table class="table table-striped">
   <caption><h1>Matchs du jour</h1></caption>
-  <thead>
-    <tr>
-      <th><%= model_class.human_attribute_name(:date_match) %></th>
-      <th><%= model_class.human_attribute_name(:equipe1_id) %></th>
-      <th><%= model_class.human_attribute_name(:equipe2_id) %></th>
-      <th>Faire son pronostic</th>
-      <th>Pronostics réalisés</th>
-    </tr>
-  </thead>
   <tbody>
     <% @matchs_du_jour.each do |match| %>
       <tr>
@@ -50,15 +38,6 @@
 <hr class="soften" />
 <table class="table table-striped">
   <caption><h1>Matchs à venir</h1></caption>
-  <thead>
-  <tr>
-    <th><%= model_class.human_attribute_name(:date_match) %></th>
-    <th><%= model_class.human_attribute_name(:equipe1_id) %></th>
-    <th><%= model_class.human_attribute_name(:equipe2_id) %></th>
-    <th>Faire son pronostic</th>
-    <th>Pronostics réalisés</th>
-  </tr>
-  </thead>
   <tbody>
   <% @matchs_a_venir.each do |match| %>
       <tr>
@@ -98,15 +77,6 @@
 
 <table class="table table-striped">
   <caption><h1>Matchs terminés</h1></caption>
-  <thead>
-  <tr>
-    <th><%= model_class.human_attribute_name(:date_match) %></th>
-    <th><%= model_class.human_attribute_name(:equipe1_id) %></th>
-    <th><%= model_class.human_attribute_name(:equipe2_id) %></th>
-    <th>Score final</th>
-    <th>Pronostics réalisés</th>
-  </tr>
-  </thead>
   <tbody>
   <% @matchs_termines.each do |match| %>
       <tr>

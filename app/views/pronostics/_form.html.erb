@@ -19,7 +19,7 @@
   </tr>
   <tr>
     <td><%= image_tag @pronostic.match.equipe1.drapeau, :class => "drapeau" %></td>
-    <td><span class="center-align"> <%= image_tag "versus.png"%></span></td>
+    <td><span class="center-align"> <%= image_tag "versus.png", :class => "versus"%></span></td>
     <td><%= image_tag @pronostic.match.equipe2.drapeau, :class => "drapeau" %></td>
   </tr>
   <tr>
@@ -28,9 +28,7 @@
     <td><%= f.number_field :score2, :min => 0, :class => 'number_field edit-btn-large', :placeholder => "SCORE" %></td>
   </tr>
   <tr>
-    <td><%= f.hidden_field :match_id, :class => 'number_field' %></td>
-    <td><%= f.submit "VALIDER & PARTAGER", :class => 'btn btn-warning btn-xlarge' %></td>
-    <td></td>
+    <td colspan="3"><%= f.hidden_field :match_id, :class => 'number_field' %><%= f.submit "VALIDER & PARTAGER", :class => 'btn btn-warning btn-xlarge' %></td>
   </tr>
 
 </table>

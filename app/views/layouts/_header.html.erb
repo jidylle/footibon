@@ -54,10 +54,10 @@
         </div>
         <div class="nav-collapse">
           <ul class="nav">
-            <li><%= link_to "C'est quoi?", root_path %></li>
+            <li><%= link_to "C'est quoi?", root_path(:anchor => "cestquoi")%></li>
             <li><%= link_to "Matchs à pronostiquer", matches_path %></li>
-            <li><%= link_to "Equipes en jeu", equipes_path %></li>
-            <li><%= link_to "Pronostics déjà réalisés", pronostics_path %></li>
+            <li><%= link_to "Equipes", equipes_path %></li>
+            <li><%= link_to "Pronostics réalisés", pronostics_path %></li>
             <li><%= link_to "Classement", classement_path %></li>
           </ul>
         </div><!-- /.nav-collapse -->

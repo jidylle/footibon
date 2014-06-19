@@ -19,6 +19,7 @@
         <td><%= image_tag(user.avatar) %></td>
         <td><h2><%=user.name%></h2></td>
         <td><h2><%=user.score%></h2></td>
+        <td><%= link_to "Voir ses pronostics",pronostics_path(sortbyuser: user.id), :class => "btn btn-info" %></td>
       </tr>
   <% end %>
   </tbody>
