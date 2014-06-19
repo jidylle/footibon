@@ -39,6 +39,19 @@
   <!-- Size should be 32 x 32 pixels -->
 </head>
 <body>
+<div id="fb-root"></div>
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({appId: '664610046941921', status: true, cookie: true,
+            xfbml: true});
+    };
+    (function() {
+        var e = document.createElement('script'); e.async = true;
+        e.src = document.location.protocol +
+                '//connect.facebook.net/en_US/all.js';
+        document.getElementById('fb-root').appendChild(e);
+    }());
+</script>
 <div class="container">
   <div class="navbar">
     <div class="navbar-inner">

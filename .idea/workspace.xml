@@ -26,30 +26,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="_footer.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/layouts/_footer.html.erb">
+      <file leaf-file-name="pronostics_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/pronostics_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="137" selection-start="181" selection-end="187" vertical-scroll-proportion="-1.25" vertical-offset="0" max-vertical-offset="255">
-              <folding>
-                <element signature="n#style#0;n#iframe#0;n#li#0;n#ul#0;n#div#0;n#footer#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="scaffolds.css.scss" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/scaffolds.css.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="14" selection-start="377" selection-end="377" vertical-scroll-proportion="-6.25" vertical-offset="165" max-vertical-offset="1020">
+            <state line="189" column="8" selection-start="5796" selection-end="6273" vertical-scroll-proportion="0.0" vertical-offset="2696" max-vertical-offset="3270">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pronostics_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/pronostics_controller.rb">
+      <file leaf-file-name="_footer.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/layouts/_footer.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="97" column="16" selection-start="2848" selection-end="2910" vertical-scroll-proportion="0.0" vertical-offset="1166" max-vertical-offset="3270">
+            <state line="3" column="98" selection-start="265" selection-end="356" vertical-scroll-proportion="-1.875" vertical-offset="0" max-vertical-offset="255">
               <folding />
             </state>
           </provider>
@@ -64,35 +53,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/welcome/index.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="117" selection-start="1073" selection-end="1073" vertical-scroll-proportion="-2.25" vertical-offset="261" max-vertical-offset="1290">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="_header.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="49" selection-start="552" selection-end="552" vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="1350">
+            <state line="44" column="40" selection-start="2054" selection-end="2054" vertical-scroll-proportion="-13.083333" vertical-offset="346" max-vertical-offset="1545">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="footibon_share_img.jpg" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/images/footibon_share_img.jpg">
-          <provider selected="true" editor-type-id="images">
-            <state />
+      <file leaf-file-name="api_keys.yml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/api_keys.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="29" selection-start="46" selection-end="61" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/pronostics/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="52" selection-start="1268" selection-end="1294" vertical-scroll-proportion="-15.0" vertical-offset="0" max-vertical-offset="615">
+            <state line="1" column="4" selection-start="35" selection-end="581" vertical-scroll-proportion="4.375" vertical-offset="120" max-vertical-offset="720">
               <folding>
                 <element signature="n#style#0;n#table#0;n#div#1;n#!!top" expanded="true" />
               </folding>
@@ -103,16 +85,36 @@
       <file leaf-file-name="pronostic.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/pronostic.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="4" selection-start="379" selection-end="379" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
+            <state line="12" column="17" selection-start="363" selection-end="374" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="match.rb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/models/match.rb">
+      <file leaf-file-name="application.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="61" selection-start="369" selection-end="369" vertical-scroll-proportion="0.23255815" vertical-offset="0" max-vertical-offset="516">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/pronostics/new.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="27" selection-start="85" selection-end="85" vertical-scroll-proportion="-1.25" vertical-offset="0" max-vertical-offset="165">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pronostics.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/pronostics.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="10" selection-start="671" selection-end="671" vertical-scroll-proportion="0.38767394" vertical-offset="0" max-vertical-offset="503">
               <folding />
             </state>
           </provider>
@@ -134,7 +136,6 @@
         <option value="$PROJECT_DIR$/app/assets/javascripts/pronostics.js.coffee" />
         <option value="$PROJECT_DIR$/log/development.log" />
         <option value="$PROJECT_DIR$/app/views/equipes/show.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/pronostics/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/equipes/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/devise/registrations/edit.html.erb" />
         <option value="$PROJECT_DIR$/app/views/devise/registrations/new.html.erb" />
@@ -145,7 +146,6 @@
         <option value="$PROJECT_DIR$/public/privacypolicy.html" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/pronostics.js" />
         <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/welcome_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
@@ -173,12 +173,14 @@
         <option value="$PROJECT_DIR$/app/assets/stylesheets/scaffolds.css.scss" />
         <option value="$PROJECT_DIR$/app/views/layouts/_footer.html.erb" />
         <option value="$PROJECT_DIR$/app/views/welcome/index.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/_header.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/pronostics_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/pronostics/index.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/pronostics/show.html.erb" />
         <option value="$PROJECT_DIR$/app/models/pronostic.rb" />
         <option value="$PROJECT_DIR$/app/models/match.rb" />
+        <option value="$PROJECT_DIR$/app/views/pronostics/new.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/layouts/_header.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/pronostics/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/pronostics.js" />
       </list>
     </option>
   </component>
@@ -1023,27 +1025,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="32" selection-start="393" selection-end="393" vertical-scroll-proportion="-10.625" vertical-offset="0" max-vertical-offset="495">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/welcome_layout.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="42" selection-start="218" selection-end="218" vertical-scroll-proportion="-6.25" vertical-offset="0" max-vertical-offset="405">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.1.1/gems/activesupport-3.2.17/lib/active_support/callbacks.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="418" column="0" selection-start="13787" selection-end="13787" vertical-scroll-proportion="0.33240223" vertical-offset="6151" max-vertical-offset="9480">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.1.1/gems/activesupport-3.2.17/lib/active_support/notifications/instrumenter.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="0" selection-start="640" selection-end="640" vertical-scroll-proportion="0.77088946" vertical-offset="74" max-vertical-offset="885">
@@ -1075,11 +1056,6 @@
         <state line="63" column="68" selection-start="2927" selection-end="2927" vertical-scroll-proportion="0.0" vertical-offset="573" max-vertical-offset="1080">
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/api_keys.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="49" selection-start="272" selection-end="272" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/initializers/devise.rb">
@@ -1266,13 +1242,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/pronostics.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="354">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.1.1/gems/mini_magick-3.7.0/lib/mini_magick/image.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="334" column="0" selection-start="13684" selection-end="13684" vertical-scroll-proportion="0.0" vertical-offset="4472" max-vertical-offset="6165">
@@ -1318,25 +1287,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/_footer.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/welcome/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="137" selection-start="181" selection-end="187" vertical-scroll-proportion="-1.25" vertical-offset="0" max-vertical-offset="255">
-          <folding>
-            <element signature="n#style#0;n#iframe#0;n#li#0;n#ul#0;n#div#0;n#footer#0;n#!!top" expanded="true" />
-          </folding>
+        <state line="21" column="117" selection-start="1073" selection-end="1073" vertical-scroll-proportion="-2.25" vertical-offset="261" max-vertical-offset="1290">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/match.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="39" selection-start="501" selection-end="501" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="516">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/api_keys.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="29" selection-start="46" selection-end="61" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="49" selection-start="552" selection-end="552" vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="1350">
+        <state line="44" column="40" selection-start="2054" selection-end="2054" vertical-scroll-proportion="-13.083333" vertical-offset="346" max-vertical-offset="1545">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/welcome/index.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/pronostics/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="117" selection-start="1073" selection-end="1073" vertical-scroll-proportion="-2.25" vertical-offset="261" max-vertical-offset="1290">
+        <state line="2" column="27" selection-start="85" selection-end="85" vertical-scroll-proportion="-1.25" vertical-offset="0" max-vertical-offset="165">
           <folding />
         </state>
       </provider>
@@ -1348,32 +1336,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="516">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/pronostic.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="17" selection-start="363" selection-end="374" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/pronostics_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="189" column="8" selection-start="5796" selection-end="6273" vertical-scroll-proportion="0.0" vertical-offset="2696" max-vertical-offset="3270">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/_footer.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="98" selection-start="265" selection-end="356" vertical-scroll-proportion="-1.875" vertical-offset="0" max-vertical-offset="255">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/pronostics/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="52" selection-start="1268" selection-end="1294" vertical-scroll-proportion="-15.0" vertical-offset="0" max-vertical-offset="615">
+        <state line="1" column="4" selection-start="35" selection-end="581" vertical-scroll-proportion="4.375" vertical-offset="120" max-vertical-offset="720">
           <folding>
             <element signature="n#style#0;n#table#0;n#div#1;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/pronostics_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/pronostics.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="16" selection-start="2848" selection-end="2910" vertical-scroll-proportion="0.0" vertical-offset="1166" max-vertical-offset="3270">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/pronostic.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="4" selection-start="379" selection-end="379" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/match.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="61" selection-start="369" selection-end="369" vertical-scroll-proportion="0.23255815" vertical-offset="0" max-vertical-offset="516">
+        <state line="13" column="10" selection-start="671" selection-end="671" vertical-scroll-proportion="0.38767394" vertical-offset="0" max-vertical-offset="503">
           <folding />
         </state>
       </provider>

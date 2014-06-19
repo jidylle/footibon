@@ -21,14 +21,21 @@
     <td><%= image_tag @pronostic.url_s3, :class => "result_prono_img", :alt => "Erreur de chargement..." %></td>
   </tr>
   <tr>
-    <td><a href="javascript:fbShare('<%= pronostic_url(@pronostic) %>',
-   <%= "'#{@pronostic.user.name} pense que le match #{@pronostic.match.phrase} se terminera sur le score de #{@pronostic.score1.to_s} - #{@pronostic.score2.to_s}'"%>,
-   'Toi aussi, défis tes amis et donne ton pronostic pour les matchs de la coupe du monde 2014 sur FootiBon! Un pronostiqueur fun et gratuit!',
-   '<%= @pronostic.url_s3 %>',
-    520, 350)" class="btn btn-warning btn-xlarge">PARTAGE TON PRONOSTIC</a></td>
+    <td><img id="share_button" class="btn btn-warning btn-xlarge"/></td>
   </tr>
 </table>
 </div>
+
+<%= javascript_tag do %>
+    window.image_url="<%=@pronostic.url_s3%>"
+    window.url="<%=pronostic_url(@pronostic)%>"
+    window.user_name="<%=@pronostic.user.name%>"
+    window.match_name="<%=@pronostic.match.phrase%>"
+    window.prono_score="<%=@pronostic.score_prono%>"
+<% end %>
+
+
+
 
 
 
