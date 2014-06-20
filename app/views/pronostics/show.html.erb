@@ -1,8 +1,11 @@
 <% content_for :for_head do %>
-    <meta content=<%= pronostic_url(@pronostic) %> property="og:url">
-    <meta content=<%= @pronostic.url_s3 %> property="og:image"> <!-- image en 200x200px -->
-    <meta content=<%= "#{@pronostic.user.name} pense que le match #{@pronostic.match.phrase} se terminera sur le score de #{@pronostic.score1.to_s} - #{@pronostic.score2.to_s}"%> property="og:title">
-    <meta content="'Toi aussi, défis tes amis et donne ton pronostic pour les matchs de la coupe du monde 2014 sur FootiBon.com! Un pronostiqueur fun et gratuit!'," property="og:description">
+    <meta content="<%= pronostic_url(@pronostic) %>" property="og:url">
+    <meta content="<%= "#{@pronostic.user.name} pense que le match #{@pronostic.match.phrase} se terminera sur le score de #{@pronostic.score1.to_s} - #{@pronostic.score2.to_s}"%>" property="og:title">
+    <meta content="FootiBon" property="og:site_name">
+    <meta content="website" property="og:type">
+    <meta content="<%= @pronostic.url_s3 %>" property="og:image"> <!-- image en 200x200px -->
+    <meta content="Développé aux Antilles, FootiBon est un jeu permettant de défier ses amis en pronostiquant les résultats des matchs du mondial de Foot en 2014! C'est simple et gratuit ! A vos pronostics !" property="og:description">
+    <meta content="723155264407551" property="fb:app_id">
 <% end %>
 
 <%- model_class = Pronostic -%>

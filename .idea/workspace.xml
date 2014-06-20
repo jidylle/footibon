@@ -75,10 +75,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="show.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/pronostics/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="96" selection-start="1390" selection-end="1390" vertical-scroll-proportion="-16.25" vertical-offset="0" max-vertical-offset="945">
+            <state line="11" column="89" selection-start="863" selection-end="863" vertical-scroll-proportion="0.39099526" vertical-offset="0" max-vertical-offset="990">
               <folding />
             </state>
           </provider>
@@ -102,10 +102,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_header.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="_header.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="48" selection-start="1478" selection-end="1478" vertical-scroll-proportion="0.8862559" vertical-offset="61" max-vertical-offset="1710">
+            <state line="15" column="2" selection-start="534" selection-end="1196" vertical-scroll-proportion="-6.8333335" vertical-offset="61" max-vertical-offset="1710">
               <folding />
             </state>
           </provider>
@@ -180,9 +180,9 @@
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
-        <option value="$PROJECT_DIR$/app/views/pronostics/show.html.erb" />
         <option value="$PROJECT_DIR$/public/rrssb.min.js" />
         <option value="$PROJECT_DIR$/app/views/layouts/_header.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/pronostics/show.html.erb" />
       </list>
     </option>
   </component>
@@ -1326,13 +1326,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/pronostics/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="96" selection-start="1390" selection-end="1390" vertical-scroll-proportion="-16.25" vertical-offset="0" max-vertical-offset="945">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/rrssb.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="0" selection-start="515" selection-end="515" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
@@ -1351,7 +1344,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="48" selection-start="1478" selection-end="1478" vertical-scroll-proportion="0.8862559" vertical-offset="61" max-vertical-offset="1710">
+        <state line="15" column="2" selection-start="534" selection-end="1196" vertical-scroll-proportion="-6.8333335" vertical-offset="61" max-vertical-offset="1710">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/pronostics/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="89" selection-start="863" selection-end="863" vertical-scroll-proportion="0.39099526" vertical-offset="0" max-vertical-offset="990">
           <folding />
         </state>
       </provider>
