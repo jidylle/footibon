@@ -14,11 +14,6 @@ class PronosticsController < ApplicationController
       @pronostics = Pronostic.paginate(page: params[:page], per_page: 20).order('created_at DESC')
     end
 
-    if (current_user && current_user.fbtoken)
-      user = FbGraph::User.me(current_user.fbtoken).fetch
-      current_user_friends=user.friends
-    end
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @pronostics }
@@ -40,7 +35,7 @@ class PronosticsController < ApplicationController
   end
 
   def getAmazonLink
-    "http://footibondev.s3.amazonaws.com/"
+    "http://footibon.s3.amazonaws.com/"
   end
 
   # GET /pronostics/new
@@ -50,7 +45,13 @@ class PronosticsController < ApplicationController
     @pronostic = Pronostic.new
     @pronostic.match=@match
 
-
+    if current_user && !current_user.is_admin
+      old_pronostic=Pronostic.where("user_id = ? AND match_id = ?",current_user.id,@pronostic.match.id).first
+      if old_pronostic
+        redirect_to pronostic_path(old_pronostic), :flash => { :error => "Vous avez déjà pronostiqué ce match" }
+        return
+      end
+    end
 
     respond_to do |format|
       format.html # new.html.erb
@@ -202,11 +203,11 @@ class PronosticsController < ApplicationController
         :fields => :access_token
     )
     page.feed!(
-        :message => pronostic.score_prono+', voici mon pronostic de '+pronostic.user.name+' pour le match '+ pronostic.match.phrase + ". Qu'en penses-tu?",
-        :picture => getAmazonLink + pronostic.id.to_s + ".jpg",
+        :message => pronostic.score_prono+', voici le pronostic de '+pronostic.user.name+' pour le match '+ pronostic.match.phrase + ". Qu'en penses-tu?",
+        :picture => pronostic.url_s3,
         :link => pronostic_url(pronostic),
         :name => pronostic.user.name + " pense que le match "+ pronostic.match.phrase + " se terminera sur le score de "+pronostic.score1.to_s+"-"+pronostic.score2.to_s,
-        :description => 'Toi aussi, défis tes amis et donne ton pronostic sur FootiBon !'
+        :description => "Toi aussi, donne ton pronostic et défis tes amis et sur www.footibon.com! C\'est simple, rapide et fun !"
     )
   end
 end

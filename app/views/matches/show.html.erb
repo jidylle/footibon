@@ -8,24 +8,27 @@
   <dd><%= @match.date_match %></dd>
 </dl>
 
-<div class="row-fluid" xmlns="http://www.w3.org/1999/html">
-  <div class="span5 right-align">
-    <h2><%= @match.equipe1.nom %></h2>
-    <%= image_tag @match.equipe1.drapeau, :class => "drapeau" %>
-  </div>
-  <div class="span1 center-align"><span class="center-align"> <%= image_tag "versus.png" %></span></div>
-  <div class="span5 left-align">
-    <h2><%= @match.equipe2.nom %></h2>
-    <%= image_tag @match.equipe2.drapeau, :class => "drapeau" %>
-  </div>
-  <div class="span5 right-align">
-    <h2><%= @match.score1 %></h2>
-  </div>
-  <div class="span1 center-align"></div>
-  <div class="span5 left-align">
-    <h2><%= @match.score2 %></h2>
-  </div>
+<div class="pronostic">
+  <table class="table table-condensed" style="text-align: center">
+    <caption>Date du match <%=@match.date_match%></caption>
+    <tr>
+      <td><h2><%= @match.equipe1.nom%></h2></td>
+      <td></td>
+      <td><h2><%= @match.equipe2.nom%></h2></td>
+    </tr>
+    <tr>
+      <td><%= image_tag @match.equipe1.drapeau, :class => "drapeau" %></td>
+      <td><span class="center-align"> <%= image_tag "versus.png", :class => "versus"%></span></td>
+      <td><%= image_tag @match.equipe2.drapeau, :class => "drapeau" %></td>
+    </tr>
+    <tr>
+      <td><h2><%= @match.score1 %></h2></td>
+      <td></td>
+      <td><h2><%= @match.score2 %></h2></td>
+    </tr>
+  </table>
 </div>
+
 <div class="row-fluid">
   <div class="span12 center-align">
     <div class="alert alert-info">Voici l'ensemble des pronostics qui ont été réalisés pour ce match:</div>

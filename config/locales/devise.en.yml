@@ -14,7 +14,7 @@ en:
       locked: "Your account is locked."
       not_found_in_database: "Invalid email or password."
       timeout: "Your session expired, please sign in again to continue."
-      unauthenticated: "You need to sign in or sign up before continuing."
+      unauthenticated: "Il faut être connecté pour valider son pronostic. Pas de panique, il suffit de cliquer sur le bouton 'Login with Facebook'"
       unconfirmed: "You have to confirm your account before continuing."
     mailer:
       confirmation_instructions:
