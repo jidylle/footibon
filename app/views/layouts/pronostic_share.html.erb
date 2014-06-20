@@ -1,0 +1,27 @@
+<%= render :partial => 'layouts/header_pronostic_share' %>
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span2">
+
+        </div><!--/span-->
+        <div class="span8">
+          <%= bootstrap_flash %>
+          <%= yield %>
+        </div>
+        <div class="span2">
+
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <%= render :partial => 'layouts/footer' %>
+
+    </div> <!-- /container -->
+
+    <!-- Javascripts
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+
+  </body>
+</html>

@@ -4,6 +4,7 @@ class PronosticsController < ApplicationController
   before_filter :store_location, :only => [:create]
   before_filter :authenticate_user!,
                 :only => [:create,:edit]
+  layout "pronostic_share", :only => :show
 
   # GET /pronostics
   # GET /pronostics.json
