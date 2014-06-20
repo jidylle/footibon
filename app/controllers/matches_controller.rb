@@ -68,19 +68,21 @@ class MatchesController < ApplicationController
 
     respond_to do |format|
       if @match.update_attributes(params[:match])
-        pronostics=Pronostic.find_all_by_match_id(@match.id)
-        pronostics.each do |p|
-          if p.win?
-            player=p.user
-            if player
-              player.score=player.score+3
-              player.save
-            end
-          elsif p.global_win?
-            player=p.user
-            if player
-              player.score=player.score+1
-              player.save
+        if !@match.score1.nil?
+          pronostics=Pronostic.find_all_by_match_id(@match.id)
+          pronostics.each do |p|
+            if p.win?
+              player=p.user
+              if player
+                player.score=player.score+3
+                player.save
+              end
+            elsif p.global_win?
+              player=p.user
+              if player
+                player.score=player.score+1
+                player.save
+              end
             end
           end
         end
