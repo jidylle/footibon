@@ -83,7 +83,7 @@
       <file leaf-file-name="_header.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="31" selection-start="881" selection-end="881" vertical-scroll-proportion="0.25105485" vertical-offset="121" max-vertical-offset="1650">
+            <state line="15" column="58" selection-start="805" selection-end="805" vertical-scroll-proportion="0.21940929" vertical-offset="121" max-vertical-offset="1650">
               <folding />
             </state>
           </provider>
@@ -758,9 +758,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/config/locales" />
       <recent name="$PROJECT_DIR$/app/assets/images" />
-      <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/app/views/layouts" />
       <recent name="$PROJECT_DIR$/app/assets/fonts" />
     </key>
@@ -1368,7 +1368,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="31" selection-start="881" selection-end="881" vertical-scroll-proportion="0.25105485" vertical-offset="121" max-vertical-offset="1650">
+        <state line="15" column="58" selection-start="805" selection-end="805" vertical-scroll-proportion="0.21940929" vertical-offset="121" max-vertical-offset="1650">
           <folding />
         </state>
       </provider>
