@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org'
 
 gem 'rails', '3.2.17'
 
@@ -62,3 +63,5 @@ gem 'open_uri_redirections'
 gem 'will_paginate-bootstrap', '0.2.5'
 
 gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
+
+gem 'rails-assets-RRSSB'

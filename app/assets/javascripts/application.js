@@ -15,4 +15,5 @@
 //= require twitter/bootstrap
 //= require social-share-button
 //= require dataTables/jquery.dataTables.bootstrap
+//= require RRSSB
 //= require_tree .

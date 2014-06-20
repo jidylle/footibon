@@ -2,8 +2,7 @@
     <meta content=<%= pronostic_url(@pronostic) %> property="og:url">
     <meta content=<%= @pronostic.url_s3 %> property="og:image"> <!-- image en 200x200px -->
     <meta content=<%= "#{@pronostic.user.name} pense que le match #{@pronostic.match.phrase} se terminera sur le score de #{@pronostic.score1.to_s} - #{@pronostic.score2.to_s}"%> property="og:title">
-    <meta content="'Toi aussi, défis tes amis et donne ton pronostic pour les matchs de la coupe du monde 2014 sur FootiBon! Un pronostiqueur fun et gratuit!'," property="og:description">
-
+    <meta content="'Toi aussi, défis tes amis et donne ton pronostic pour les matchs de la coupe du monde 2014 sur FootiBon.com! Un pronostiqueur fun et gratuit!'," property="og:description">
 <% end %>
 
 <%- model_class = Pronostic -%>
@@ -21,7 +20,23 @@
     <td><%= image_tag @pronostic.url_s3, :class => "result_prono_img", :alt => "Erreur de chargement..." %></td>
   </tr>
   <tr>
-    <td><div class="fb-like" data-href="http://www.footibon.com/pronostics/42" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div></td>
+    <td>
+      <!-- Buttons start here. Copy this ul to your document. -->
+      <ul class="rrssb-buttons clearfix">
+        <li class="facebook">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=#{pronostic_url(@pronostic)}" class="popup">
+            <span class="icon">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+                  <path d="M27.825,4.783c0-2.427-2.182-4.608-4.608-4.608H4.783c-2.422,0-4.608,2.182-4.608,4.608v18.434
+                        c0,2.427,2.181,4.608,4.608,4.608H14V17.379h-3.379v-4.608H14v-1.795c0-3.089,2.335-5.885,5.192-5.885h3.718v4.608h-3.726
+                        c-0.408,0-0.884,0.492-0.884,1.236v1.836h4.609v4.608h-4.609v10.446h4.916c2.422,0,4.608-2.188,4.608-4.608V4.783z"/>
+                </svg>
+            </span>
+            <span class="text">PARTAGE AVEC TES AMIS</span>
+          </a>
+        </li>
+      </ul>
+    </td>
   </tr>
 </table>
 </div>
