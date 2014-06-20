@@ -1,4 +1,5 @@
 <% content_for :for_head do %>
+    <%- show_specific_fb_meta=true %>
     <meta content="<%= pronostic_url(@pronostic) %>" property="og:url">
     <meta content="<%= "#{@pronostic.user.name} pense que le match #{@pronostic.match.phrase} se terminera sur le score de #{@pronostic.score1.to_s} - #{@pronostic.score2.to_s}"%>" property="og:title">
     <meta content="FootiBon" property="og:site_name">
@@ -23,7 +24,7 @@
     <td><%= image_tag @pronostic.url_s3, :class => "result_prono_img", :alt => "Erreur de chargement..." %></td>
   </tr>
   <tr>
-    <td>
+    <td style="text-align: center">
       <!-- Buttons start here. Copy this ul to your document. -->
       <ul class="rrssb-buttons clearfix">
         <li class="facebook">
