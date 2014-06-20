@@ -1,7 +1,7 @@
 <% content_for :for_head do %>
     <%- show_specific_fb_meta=true %>
     <meta content="<%= pronostic_url(@pronostic) %>" property="og:url">
-    <meta content="<%= "#{@pronostic.user.name} pense que le match #{@pronostic.match.phrase} se terminera sur le score de #{@pronostic.score1.to_s} - #{@pronostic.score2.to_s}"%>" property="og:title">
+    <meta content="<%= "#{@pronostic.score1.to_s} - #{@pronostic.score2.to_s}, voici le score pronostiqué par #{@pronostic.user.name} pour le match #{@pronostic.match.phrase}"%>" property="og:title">
     <meta content="FootiBon" property="og:site_name">
     <meta content="website" property="og:type">
     <meta content="<%= @pronostic.url_s3 %>" property="og:image"> <!-- image en 200x200px -->
@@ -36,7 +36,7 @@
                         c-0.408,0-0.884,0.492-0.884,1.236v1.836h4.609v4.608h-4.609v10.446h4.916c2.422,0,4.608-2.188,4.608-4.608V4.783z"/>
                 </svg>
             </span>
-            <span class="text">PARTAGE AVEC TES AMIS</span>
+            <span class="text" id="bigtextsize">PARTAGE AVEC TES AMIS</span>
           </a>
         </li>
       </ul>
