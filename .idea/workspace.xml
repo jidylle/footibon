@@ -29,7 +29,18 @@
       <file leaf-file-name="_footer.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/_footer.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="198" selection-start="248" selection-end="248" vertical-scroll-proportion="-1.25" vertical-offset="0" max-vertical-offset="255">
+            <state line="20" column="11" selection-start="1412" selection-end="1412" vertical-scroll-proportion="-12.5" vertical-offset="0" max-vertical-offset="405">
+              <folding>
+                <element signature="n#style#0;n#iframe#0;n#li#0;n#ul#0;n#div#0;n#footer#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="robots.txt" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/robots.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="76" selection-start="202" selection-end="202" vertical-scroll-proportion="0.14677104" vertical-offset="0" max-vertical-offset="511">
               <folding />
             </state>
           </provider>
@@ -80,10 +91,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_header.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="_header.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="24" selection-start="773" selection-end="773" vertical-scroll-proportion="0.21940929" vertical-offset="121" max-vertical-offset="1665">
+            <state line="15" column="24" selection-start="773" selection-end="773" vertical-scroll-proportion="-4.9583335" vertical-offset="106" max-vertical-offset="1665">
               <folding />
             </state>
           </provider>
@@ -117,7 +128,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/config/initializers/social_share_button.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/pronostics.js.coffee" />
         <option value="$PROJECT_DIR$/log/development.log" />
         <option value="$PROJECT_DIR$/app/views/devise/registrations/edit.html.erb" />
@@ -165,9 +175,10 @@
         <option value="$PROJECT_DIR$/app/controllers/pronostics_controller.rb" />
         <option value="$PROJECT_DIR$/config/locales/devise.fr.yml" />
         <option value="$PROJECT_DIR$/config/locales/devise.en.yml" />
-        <option value="$PROJECT_DIR$/app/views/layouts/_footer.html.erb" />
         <option value="$PROJECT_DIR$/app/views/welcome/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_header.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/layouts/_footer.html.erb" />
+        <option value="$PROJECT_DIR$/public/robots.txt" />
       </list>
     </option>
   </component>
@@ -1010,13 +1021,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="381" column="0" selection-start="9039" selection-end="9066" vertical-scroll-proportion="0.0" vertical-offset="3826" max-vertical-offset="6915">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/bootstrap_and_overrides.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="30" selection-start="414" selection-end="414" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1155">
@@ -1322,13 +1326,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/_footer.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="198" selection-start="248" selection-end="248" vertical-scroll-proportion="-1.25" vertical-offset="0" max-vertical-offset="255">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/images/welcome_partager.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1368,7 +1365,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="24" selection-start="773" selection-end="773" vertical-scroll-proportion="0.21940929" vertical-offset="121" max-vertical-offset="1665">
+        <state line="15" column="24" selection-start="773" selection-end="773" vertical-scroll-proportion="-4.9583335" vertical-offset="106" max-vertical-offset="1665">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/_footer.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="11" selection-start="1412" selection-end="1412" vertical-scroll-proportion="-12.5" vertical-offset="0" max-vertical-offset="405">
+          <folding>
+            <element signature="n#style#0;n#iframe#0;n#li#0;n#ul#0;n#div#0;n#footer#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/robots.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="76" selection-start="202" selection-end="202" vertical-scroll-proportion="0.14677104" vertical-offset="0" max-vertical-offset="511">
           <folding />
         </state>
       </provider>
