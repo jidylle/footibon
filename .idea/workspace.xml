@@ -83,7 +83,7 @@
       <file leaf-file-name="_header.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="58" selection-start="805" selection-end="805" vertical-scroll-proportion="0.21940929" vertical-offset="121" max-vertical-offset="1650">
+            <state line="15" column="24" selection-start="773" selection-end="773" vertical-scroll-proportion="0.21940929" vertical-offset="121" max-vertical-offset="1665">
               <folding />
             </state>
           </provider>
@@ -1368,7 +1368,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="58" selection-start="805" selection-end="805" vertical-scroll-proportion="0.21940929" vertical-offset="121" max-vertical-offset="1650">
+        <state line="15" column="24" selection-start="773" selection-end="773" vertical-scroll-proportion="0.21940929" vertical-offset="121" max-vertical-offset="1665">
           <folding />
         </state>
       </provider>
