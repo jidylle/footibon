@@ -83,7 +83,7 @@
       <file leaf-file-name="show.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/pronostics/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="53" selection-start="2481" selection-end="2481" vertical-scroll-proportion="0.56962025" vertical-offset="300" max-vertical-offset="1005">
+            <state line="30" column="106" selection-start="1673" selection-end="1673" vertical-scroll-proportion="0.3164557" vertical-offset="300" max-vertical-offset="1005">
               <folding>
                 <element signature="n#style#0;n#table#0;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#td#0;n#tr#2;n#table#0;n#div#1;n#!!top" expanded="true" />
@@ -1342,7 +1342,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/pronostics/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="53" selection-start="2481" selection-end="2481" vertical-scroll-proportion="0.56962025" vertical-offset="300" max-vertical-offset="1005">
+        <state line="30" column="106" selection-start="1673" selection-end="1673" vertical-scroll-proportion="0.3164557" vertical-offset="300" max-vertical-offset="1005">
           <folding>
             <element signature="n#style#0;n#table#0;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#0;n#tr#2;n#table#0;n#div#1;n#!!top" expanded="true" />
