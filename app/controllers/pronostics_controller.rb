@@ -117,7 +117,7 @@ class PronosticsController < ApplicationController
       if @pronostic.save
         store_in_s3(file_tmp_path, @pronostic.id)
         share_on_footibon_page_facebook @pronostic
-        if current_user && current_user.uid=="10150002291408540" #||(current_user && current_user.is_admin)
+        if current_user && (current_user.uid=="10150002291408540" || current_user.uid=="313687985456952") #||(current_user && current_user.is_admin)
             share_on_facebook @pronostic
         end
         format.html { redirect_to @pronostic, notice: 'Pronostic was successfully created.' }
