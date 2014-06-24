@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140618143334) do
+ActiveRecord::Schema.define(:version => 20140624022309) do
 
   create_table "equipes", :force => true do |t|
     t.string   "nom"
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(:version => 20140618143334) do
     t.string   "fbtoken"
     t.boolean  "is_admin"
     t.integer  "score",                  :default => 0
+    t.integer  "scoreday",               :default => 0
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

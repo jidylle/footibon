@@ -75,12 +75,14 @@ class MatchesController < ApplicationController
               player=p.user
               if player
                 player.score=player.score+3
+                player.scoreday=player.scoreday+3
                 player.save
               end
             elsif p.global_win?
               player=p.user
               if player
                 player.score=player.score+1
+                player.scoreday=player.scoreday+1
                 player.save
               end
             end

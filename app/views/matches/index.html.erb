@@ -12,6 +12,8 @@
               Trop tard pour un pronostic! Match en cours...</br>
           <% elsif match.is_finished%>
              Match terminé (<%= match.score_final %>) </br>
+          <% elsif match.pronosticated_by_user(current_user)%>
+              Déjà pronostiqué (<%=match.pronosticated_by_user(current_user).score_prono%>) </br>
           <% else %>
               <%= link_to "FAIRE MON PRONOSTIC",
                           new_match_pronostics_path(match), :class => 'btn btn-warning btn-mediumlarge' %> </br>
@@ -49,6 +51,8 @@
               Trop tard pour un pronostic! Match en cours...</br>
           <% elsif match.is_finished%>
               Match terminé (<%= match.score_final %>) </br>
+          <% elsif match.pronosticated_by_user(current_user)%>
+              Déjà pronostiqué (<%=match.pronosticated_by_user(current_user).score_prono%>) </br>
           <% else %>
               <%= link_to "FAIRE MON PRONOSTIC",
                           new_match_pronostics_path(match), :class => 'btn btn-warning btn-mediumlarge' %> </br>

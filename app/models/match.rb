@@ -26,4 +26,11 @@ class Match < ActiveRecord::Base
       "equipe2"
     end
   end
+
+  def pronosticated_by_user(user)
+    if user && !user.is_admin
+      old_pronostic=Pronostic.where("user_id = ? AND match_id = ?",user.id,id).first
+    end
+  end
+
 end

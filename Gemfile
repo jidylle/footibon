@@ -65,3 +65,5 @@ gem 'will_paginate-bootstrap', '0.2.5'
 gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
 
 gem 'rails-assets-RRSSB'
+
+gem 'koala'

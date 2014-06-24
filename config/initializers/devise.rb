@@ -252,6 +252,6 @@ Devise.setup do |config|
 
   require "omniauth-facebook"
   API_KEYS = YAML::load_file("#{Rails.root}/config/api_keys.yml")[Rails.env]
-  config.omniauth :facebook, API_KEYS['facebook']['api_key'], API_KEYS['facebook']['api_secret'],:scope => "publish_actions, email"
+  config.omniauth :facebook, API_KEYS['facebook']['api_key'], API_KEYS['facebook']['api_secret'],:scope => "publish_actions, email, manage_pages"
 
 end

@@ -23,6 +23,10 @@
   <tr>
     <td><%= image_tag @pronostic.url_s3, :class => "result_prono_img", :alt => "Erreur de chargement..." %></td>
   </tr>
+  <tr>
+    <td><%= link_to "FAIRE UN AUTRE PRONOSTIC",
+                    matches_path, :class => 'btn btn-warning btn-mediumlarge' %></td>
+  </tr>
 </table>
 </div>
 

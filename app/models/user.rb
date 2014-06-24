@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   devise :omniauthable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :provider, :uid, :avatar, :fbtoken, :score
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :provider, :uid, :avatar, :fbtoken, :score, :scoreday
   # attr_accessible :title, :body
 
   has_many :pronostics
@@ -34,5 +34,17 @@ class User < ActiveRecord::Base
                            password:Devise.friendly_token[0,20],
         )
       end    end
+  end
+
+  def facebook
+    @facebook ||= Koala::Facebook::API.new(fbtoken)
+  end
+
+  def reset_score_day
+    users=User.all
+    users.each do |u|
+      u.scoreday=0
+      u.save
+    end
   end
 end
