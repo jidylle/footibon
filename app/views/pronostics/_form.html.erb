@@ -1,4 +1,4 @@
-<%= form_for @pronostic, :html => { :class => 'form-horizontal' } do |f| %>
+<%= form_for @pronostic, :html => { :id => "new_pronostic",:class => 'form-horizontal' } do |f| %>
     <% if @pronostic.errors.count>0 %>
         <div class="row-fluid" id="error_explanation">
           <h2><%= pluralize(@pronostic.errors.count, "error") %> :</h2>

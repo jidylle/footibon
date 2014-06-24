@@ -1,4 +1,7 @@
 class EquipesController < ApplicationController
+
+  before_filter :only_admin, only: [:new, :create, :edit, :update, :destroy]
+
   # GET /equipes
   # GET /equipes.json
   def index

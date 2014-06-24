@@ -1,6 +1,8 @@
 class MatchesController < ApplicationController
+  before_filter :only_admin, only: [:new, :edit, :update, :destroy]
   # GET /matches
   # GET /matches.json
+
   def index
     @matchs_du_jour = Match.find_all_by_date_match(DateTime.now.to_date)
 

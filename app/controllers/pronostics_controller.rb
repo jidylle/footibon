@@ -4,6 +4,7 @@ class PronosticsController < ApplicationController
   before_filter :store_location, :only => [:create]
   before_filter :authenticate_user!,
                 :only => [:create,:edit]
+  before_filter :only_admin, only: [:edit, :update, :destroy]
   layout "pronostic_share", :only => :show
 
   # GET /pronostics
@@ -75,6 +76,14 @@ class PronosticsController < ApplicationController
     end
 
     @pronostic.user = current_user
+
+    if current_user && !current_user.is_admin
+      old_pronostic=Pronostic.where("user_id = ? AND match_id = ?",current_user.id,@pronostic.match.id).first
+      if old_pronostic
+        redirect_to pronostic_path(old_pronostic), :flash => { :error => "Vous avez déjà pronostiqué ce match" }
+        return
+      end
+    end
 
     first_image = MiniMagick::Image.open "#{Rails.root}/app/assets/images/scoreboard.jpg"
 
